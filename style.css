@@ -70,6 +70,8 @@ input{
     height: 1.5vw;
     border-radius: 2px;
     border: none;
+    color: var(--cor-container);
+    font-weight: bold;
 }
 
 label{
