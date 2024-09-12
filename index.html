@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BI Focal</title>
+</head>
+
+<body>
+
+    <section id="login-tela" class="login-screen">
+
+        <img src="./logo.png" alt="">
+
+        <p class="label-logo">Inteligência Empresarial</p>
+
+        <div class="container">
+
+            <form id="loginForm">
+
+                <label for="username">Usuário:</label>
+
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Senha:</label>
+
+                <input type="password" id="password" name="password" required>
+
+                <button class="btn" type="submit">Entrar</button>
+
+            </form>
+
+            <p id="message"></p>
+
+        </div>
+
+    </section>
+
+    <div id="container-logado" class="container-logado">
+
+    
+    <div class="container-dashboard">
+    <iframe class="bi" src="https://app.powerbi.com/view?r=eyJrIjoiYzVkY2RiMGYtNDY0MC00M2ZkLTk4ZDAtZTVmNzg5Nzc5YjhkIiwidCI6ImRmZTI2N2Y3LWVkZTEtNDJiZi04MzZlLWJhMTc4MWJjNWFkNCJ9"></iframe>
+
+    <iframe class="bi" src="https://app.powerbi.com/view?r=eyJrIjoiYzVkY2RiMGYtNDY0MC00M2ZkLTk4ZDAtZTVmNzg5Nzc5YjhkIiwidCI6ImRmZTI2N2Y3LWVkZTEtNDJiZi04MzZlLWJhMTc4MWJjNWFkNCJ9"></iframe>
+
+    </div>
+
+    </div>
+    <script src="./javascripts/login.js"></script>
+</body>
+
+</html>
