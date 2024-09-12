@@ -36,7 +36,7 @@ section{
 }
 
 img{
-    width: 180px;
+    width: 150px;
 }
 
 .label-logo{
@@ -96,11 +96,7 @@ button{
 .sumir{
     display: none;
 }
-/* 
-iframe{
-    width: 100vw;
-    height: 100vh;
-} */
+
 
 .container-logado{
     /* z-index: 1; */
@@ -108,3 +104,21 @@ iframe{
     width: 100vw;
     height: 100vh;
 }
+
+.container-dashboard{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+}
+
+
+.bi1{
+    width: 100vw;
+    height: 100vh;
+}
+
+/* .bi2{
+    width: 100vw;
+    height: 100vh;
+} */
