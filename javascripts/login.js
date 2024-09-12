@@ -1,3 +1,6 @@
+
+// Logica de logar
+
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -13,10 +16,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
            
             if (username === validUsername && password === validPassword) {
-                // window.location.href = './login-sucess.html'
+          
+                const link = document.getElementById('link');
                 const tela = document.getElementById('login-tela');
                 tela.classList.add('sumir')
-                // document.getElementById('message').innerText = "Logado";
+                link.src = data.dashComercial;
+               
             } else {
                 document.getElementById('message').innerText = "Usuário ou senha incorretos!";
             }
