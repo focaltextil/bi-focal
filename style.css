@@ -131,7 +131,9 @@ button{
 .btn-dash button{
     background-color: #ffffff;
     color: #0B2D56;
+    font-weight: bold;
     width: 15vw;
+    box-shadow: 1px 2px 7px rgb(49, 49, 49);
 }
 
 .bi{
