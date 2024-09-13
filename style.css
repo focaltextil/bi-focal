@@ -53,7 +53,8 @@ img{
     border-radius: 5px;
     align-items: center;
     background-color: var(--cor-container);
-    height: 20vw;
+    height: 40vh;
+    width: 20vw;
 }
 
 #loginForm{
@@ -114,6 +115,15 @@ button{
     height: 100vh;
 }
 
+.btn-dash{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 8px;
+
+}
 
 .bi{
     width: 100vw;

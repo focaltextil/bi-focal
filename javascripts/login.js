@@ -1,7 +1,7 @@
 
-// Logica de logar
+// --------------------------LOGICA PARA LOGAR NA PLATAFORMA-----------------
 
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const username = document.getElementById('username').value;
@@ -10,21 +10,61 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     fetch('keys.json')
         .then(response => response.json())
         .then(data => {
-            
+
             const validUsername = data.user;
             const validPassword = data.password;
 
-           
+
             if (username === validUsername && password === validPassword) {
-          
-                const link = document.getElementById('link');
+
                 const tela = document.getElementById('login-tela');
                 tela.classList.add('sumir')
                 link.src = data.dashComercial;
-               
+
             } else {
                 document.getElementById('message').innerText = "Usuário ou senha incorretos!";
             }
         })
-        .catch(error => console.error('Erro ao carregar o JSON:', error));
+
+
+// --------------------------LOGICA DOS BOTOES-----------------
+
+    const btnrep = document.getElementById('btn-rep');
+
+    btnrep.addEventListener('click', function () {
+        fetch('keys.json')
+            .then(response => response.json())
+            .then(data => {
+                link.src = data.dashRepresentantes;
+            })
+    });
+
+
+    const btncomercial = document.getElementById('btn-comercial');
+
+    btncomercial.addEventListener('click', function () {
+        fetch('keys.json')
+            .then(response => response.json())
+            .then(data => {
+                link.src = data.dashComercial;
+            })
+    });
+
+
+    const btnmalharia = document.getElementById('btn-malharia');
+    const link = document.getElementById('link');
+
+    btnmalharia.addEventListener('click', function () {
+        fetch('keys.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log("Botão clicado!");
+                link.src = data.dashMalharia;
+            })
+            .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+    });
+
 });
+
+
+// --------------------------FIM-----------------

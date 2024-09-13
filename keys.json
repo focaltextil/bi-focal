@@ -2,5 +2,6 @@
     "user": "focal",
     "password": "2002",
     "dashComercial": "https://app.powerbi.com/view?r=eyJrIjoiYzVkY2RiMGYtNDY0MC00M2ZkLTk4ZDAtZTVmNzg5Nzc5YjhkIiwidCI6ImRmZTI2N2Y3LWVkZTEtNDJiZi04MzZlLWJhMTc4MWJjNWFkNCJ9",
-    "dashRepresentantes": "https://app.powerbi.com/view?r=eyJrIjoiN2JiZTcwMTUtYTMzMi00ZTY5LTliZDgtZmQwOTE0NjlmM2M0IiwidCI6ImRmZTI2N2Y3LWVkZTEtNDJiZi04MzZlLWJhMTc4MWJjNWFkNCJ9"
+    "dashRepresentantes": "https://app.powerbi.com/view?r=eyJrIjoiN2JiZTcwMTUtYTMzMi00ZTY5LTliZDgtZmQwOTE0NjlmM2M0IiwidCI6ImRmZTI2N2Y3LWVkZTEtNDJiZi04MzZlLWJhMTc4MWJjNWFkNCJ9",
+    "dashMalharia": "https://app.powerbi.com/view?r=eyJrIjoiODdmZmJkMzUtNGYyZS00ZDg2LWE2NDMtMzFhZTQ3NGViMzQwIiwidCI6ImRmZTI2N2Y3LWVkZTEtNDJiZi04MzZlLWJhMTc4MWJjNWFkNCJ9"
 }

@@ -15,8 +15,6 @@
 
         <img src="./logo.png" alt="">
 
-        <p class="label-logo">Inteligência Empresarial</p>
-
         <div class="container">
 
             <form id="loginForm">
@@ -41,12 +39,18 @@
 
     <div id="container-logado" class="container-logado">
 
-    
-    <div class="container-dashboard">
 
-    <iframe id="link" class="bi" src=""></iframe>
+        <div class="btn-dash"> 
+            <button id="btn-comercial" onclick="clicked()">comercial</button>
+            <button id="btn-malharia" onclick="clicked()">Produção Malharia</button>
+            <button id="btn-rep" onclick="clicked()" >Representantes</button>
+        </div>
 
-    </div>
+        <div class="container-dashboard">
+
+            <iframe id="link" class="bi" src=""></iframe>
+
+        </div>
 
     </div>
     <script src="./javascripts/login.js"></script>
