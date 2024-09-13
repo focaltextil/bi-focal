@@ -42,8 +42,10 @@ img{
 .label-logo{
     color: var(--cor-texto);
     margin: 1vw;
-    font-weight: 300;
+    font-weight: bold;
 }
+
+
 
 .container{
     display: flex;
