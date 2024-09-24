@@ -51,7 +51,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     });
 
 
-    const btnmalharia = document.getElementById('btn-malharia');
+    const btnmalharia = document.getElementById('btn-amostras');
     const link = document.getElementById('link');
 
     btnmalharia.addEventListener('click', function () {
@@ -59,7 +59,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
             .then(response => response.json())
             .then(data => {
                 console.log("Botão clicado!");
-                link.src = data.dashMalharia;
+                link.src = data.dashamostras;
             })
             .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
     });
