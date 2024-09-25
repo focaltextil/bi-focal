@@ -1,6 +1,7 @@
 {
     "user": "focal",
     "password": "2002",
+    "type":"master",
     "dashComercial": "https://app.powerbi.com/view?r=eyJrIjoiYzVkY2RiMGYtNDY0MC00M2ZkLTk4ZDAtZTVmNzg5Nzc5YjhkIiwidCI6ImRmZTI2N2Y3LWVkZTEtNDJiZi04MzZlLWJhMTc4MWJjNWFkNCJ9",
     "dashRepresentantes": "https://app.powerbi.com/view?r=eyJrIjoiN2JiZTcwMTUtYTMzMi00ZTY5LTliZDgtZmQwOTE0NjlmM2M0IiwidCI6ImRmZTI2N2Y3LWVkZTEtNDJiZi04MzZlLWJhMTc4MWJjNWFkNCJ9",
     "dashamostras": "https://app.powerbi.com/view?r=eyJrIjoiZjlkOTllYjktMmMxNi00OTY2LWI0NjAtNmNhMzhiMmRkMjkzIiwidCI6ImRmZTI2N2Y3LWVkZTEtNDJiZi04MzZlLWJhMTc4MWJjNWFkNCJ9"
