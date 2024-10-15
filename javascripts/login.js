@@ -2,13 +2,14 @@
 
 // Para carregar o login salvo, ao carregar a página
 window.addEventListener('load', function () {
-        const savedUsername = localStorage.getItem('username');
-        const savedPassword = localStorage.getItem('password');
+    const savedUsername = localStorage.getItem('username');
+    const savedPassword = localStorage.getItem('password');
+    
 
-        if (savedUsername && savedPassword) {
-            document.getElementById('username').value = savedUsername;
-            document.getElementById('password').value = savedPassword;
-        }
+    if (savedUsername && savedPassword) {
+        document.getElementById('username').value = savedUsername;
+        document.getElementById('password').value = savedPassword;
+    }
 });
 
 // --------------------------LOGICA PARA LOGAR NA PLATAFORMA-----------------
@@ -34,14 +35,14 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
                 const tela = document.getElementById('login-tela');
                 tela.classList.add('sumir');
                 link.src = data.dashComercial;
-
+                let logado = localStorage.setItem("tela",tela);
             } else {
                 document.getElementById('message').innerText = "Usuário ou senha incorretos!";
             }
         });
 
 
-// ------------------------LOGICA DOS BOTOES-----------------
+    // ------------------------LOGICA DOS BOTOES-----------------
 
     const btnrep = document.getElementById('btn-rep');
 

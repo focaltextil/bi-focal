@@ -141,3 +141,37 @@ button{
     width: 100vw;
     height: 100vh;
 }
+
+/* ------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2vw;
+        border-radius: 5px;
+        align-items: center;
+        background-color: var(--cor-container);
+        height: 100vh;
+        width: 100vw;
+    }
+
+    img{
+        display: none;
+    }
+    
+    .label-logo{
+        display: none;
+    }
+
+    input{
+        margin: 1vw;
+        width: 100%;
+        outline: none;
+        height: 5vw;
+        border-radius: 2px;
+        border: none;
+        color: var(--cor-container);
+        font-weight: bold;
+    }
+}
