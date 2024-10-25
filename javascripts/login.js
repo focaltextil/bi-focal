@@ -1,17 +1,17 @@
 // --------------------------SALVAR LOGIN NO LOCAL STORAGE-----------------
-window.addEventListener('load', function () {
-    const login_result = localStorage.getItem("login");
+// window.addEventListener('load', function () {
+//     const login_result = localStorage.getItem("login");
     
-    if(login_result === 1){
+//     if(login_result === 1){
         
-        const tela = document.getElementById('login-tela');
-        tela.classList.add('sumir');
-        link.src = data.dashComercial;
-    }
+//         const tela = document.getElementById('login-tela');
+//         tela.classList.add('sumir');
+//         link.src = data.dashComercial;
+//     }
     
 
    
-});
+// });
 
 // --------------------------LOGICA PARA LOGAR NA PLATAFORMA-----------------
 document.getElementById('loginForm').addEventListener('submit', function (event) {
