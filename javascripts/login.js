@@ -1,5 +1,3 @@
-
-
 // Para carregar o login salvo, ao carregar a página
 window.addEventListener('load', function () {
     const savedUsername = localStorage.getItem('username');
@@ -80,6 +78,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     });
 
 });
+
 
 
 // --------------------------FIM-----------------

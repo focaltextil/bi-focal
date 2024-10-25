@@ -45,8 +45,6 @@ img{
     font-weight: bold;
 }
 
-
-
 .container{
     display: flex;
     flex-direction: column;
@@ -75,11 +73,13 @@ input{
     border: none;
     color: var(--cor-container);
     font-weight: bold;
+    font-size: 1.2vw;
 }
 
 label{
     color: var(--cor-texto);
     font-weight: 300;
+    font-size: 1vw;
 }
 
 #message{
@@ -95,7 +95,7 @@ button{
     border: none;
     background-color: var(--cor-bg);
     border-radius: 2px;
-
+    
 }
 
 
@@ -143,6 +143,7 @@ button{
 }
 
 /* ------------------------------------------------------------- */
+/* MOBILE */
 @media screen and (max-width: 600px) {
     .container{
         display: flex;
@@ -173,5 +174,12 @@ button{
         border: none;
         color: var(--cor-container);
         font-weight: bold;
+        font-size: 3vw;
+    }
+
+    label{
+        font-size: 3vw;
     }
 }
+
+/* ------------------------------------------------------------- */
