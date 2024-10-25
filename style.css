@@ -98,6 +98,10 @@ button{
     
 }
 
+#message{
+    color: rgb(228, 213, 12);
+}
+
 
 .sumir{
     display: none;
