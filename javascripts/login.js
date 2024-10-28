@@ -11,7 +11,7 @@ window.addEventListener('load', function () {
             login_result = 0;
         }
         
-    });
+});
 
 // --------------------------LOGICA PARA LOGAR NA PLATAFORMA-----------------
 
@@ -33,7 +33,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
                 const tela = document.getElementById('login-tela');
                 tela.classList.add('sumir');
                 link.src = data.dashComercial;
-                let logado = localStorage.setItem("login","1");
+                // let logado = localStorage.setItem("login","1");
     
             } else {
                 document.getElementById('message').innerText = "Usuário ou senha incorretos!";
