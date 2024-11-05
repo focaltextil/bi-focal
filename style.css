@@ -73,7 +73,8 @@ input{
     border: none;
     color: var(--cor-container);
     font-weight: bold;
-    font-size: 1.2vw;
+    font-size: 0.9vw;
+    
 }
 
 label{
