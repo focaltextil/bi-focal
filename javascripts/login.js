@@ -3,14 +3,14 @@
 // window.addEventListener('load', function () {
 //     let login_result = localStorage.getItem("login");
 //     let tela = document.getElementById('login-tela');
-    
+
 //     if(login_result === "1"){
 //         tela.classList.add('sumir');
 
 //         }else{
 //             login_result = 0;
 //         }
-        
+
 // });
 
 // --------------------------LOGICA PARA LOGAR NA PLATAFORMA-----------------
@@ -21,7 +21,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    fetch('keys.json')
+    fetch('crendencials/keys.json')
         .then(response => response.json())
         .then(data => {
 
@@ -30,54 +30,11 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 
             if (username === validUsername && password === validPassword) {
 
-                const tela = document.getElementById('login-tela');
-                tela.classList.add('sumir');
-                link.src = data.dashComercial;
-                // let logado = localStorage.setItem("login","1");
-    
+                window.location.href = "./home.html"
             } else {
                 document.getElementById('message').innerText = "Usuário ou senha incorretos!";
             }
-        });
-
-
-    // ------------------------LOGICA DOS BOTOES---------------------------------
-
-    const btnrep = document.getElementById('btn-rep');
-
-    btnrep.addEventListener('click', function () {
-        fetch('keys.json')
-            .then(response => response.json())
-            .then(data => {
-                link.src = data.dashRepresentantes;
-            })
     });
-
-
-    const btncomercial = document.getElementById('btn-comercial');
-
-    btncomercial.addEventListener('click', function () {
-        fetch('keys.json')
-            .then(response => response.json())
-            .then(data => {
-                link.src = data.dashComercial;
-            })
-    });
-
-
-    const btnmalharia = document.getElementById('btn-amostras');
-    const link = document.getElementById('link');
-
-    btnmalharia.addEventListener('click', function () {
-        fetch('keys.json')
-            .then(response => response.json())
-            .then(data => {
-                console.log("Botão clicado!");
-                link.src = data.dashamostras;
-            })
-            .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
-    });
-
 });
 
 
