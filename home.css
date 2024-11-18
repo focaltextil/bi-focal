@@ -41,6 +41,7 @@ section{
     background-color: #0B2D56;
 }
 
+
 button{
     background-color: #0294b8;
     color: #ffffff;
@@ -48,6 +49,13 @@ button{
     border-radius: 0.3vw;
     border: none;
     width: 10vw;
+    cursor: pointer;
+}
+
+
+.exit{
+    background-color: orange;
+    width: 5vw;
 }
 
 iframe{

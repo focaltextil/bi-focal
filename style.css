@@ -96,6 +96,7 @@ button{
     border: none;
     background-color: var(--cor-bg);
     border-radius: 2px;
+    cursor: pointer;
     
 }
 

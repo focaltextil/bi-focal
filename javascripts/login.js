@@ -1,20 +1,4 @@
-// --------------------------SALVAR LOGIN NO LOCAL STORAGE-----------------
-
-// window.addEventListener('load', function () {
-//     let login_result = localStorage.getItem("login");
-//     let tela = document.getElementById('login-tela');
-
-//     if(login_result === "1"){
-//         tela.classList.add('sumir');
-
-//         }else{
-//             login_result = 0;
-//         }
-
-// });
-
-// --------------------------LOGICA PARA LOGAR NA PLATAFORMA-----------------
-
+// // --------------------------LOGICA PARA LOGAR NA PLATAFORMA-----------------
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -25,17 +9,25 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
         .then(response => response.json())
         .then(data => {
 
-            const validUsername = data.user;
-            const validPassword = data.password;
+            const user = data.find(item => item.user === username && item.password === password);
 
-            if (username === validUsername && password === validPassword) {
+            if (user) {
 
-                window.location.href = "./home.html"
+                window.location.href = "./home.html";
+                localStorage.setItem("logon", 1)
+                localStorage.setItem("usuario",user.user)
             } else {
+
                 document.getElementById('message').innerText = "Usuário ou senha incorretos!";
+                document.getElementById('message').style.color = "red";
             }
-    });
+        })
+        .catch(error => {
+            console.error('Erro ao carregar as credenciais:', error);
+            document.getElementById('message').innerText = "Erro ao carregar dados de autenticação.";
+        });
 });
 
-
 // --------------------------FIM--------------------------------------------------------------
+
+
