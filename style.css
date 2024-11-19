@@ -166,16 +166,17 @@ button{
     img{
         display: none;
     }
+
     
     .label-logo{
         display: none;
     }
 
     input{
-        margin: 1vw;
+        margin-bottom: 3vw;
         width: 100%;
         outline: none;
-        height: 5vw;
+        height: 10vw;
         border-radius: 2px;
         border: none;
         color: var(--cor-container);
@@ -184,7 +185,14 @@ button{
     }
 
     label{
-        font-size: 3vw;
+        font-size: 7vw;
+    }
+
+    .btn{
+        margin-top: 4vw;
+        width: 90vw;
+        height: 10vw;
+        font-size: 5vw;
     }
 }
 

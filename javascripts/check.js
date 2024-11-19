@@ -1,5 +1,4 @@
 
-
 function Logado() {
   
     const logon = localStorage.getItem("logon");
@@ -12,8 +11,7 @@ function Logado() {
     const tela  = document.getElementById('tela');
 
     if (logon === "1" && usuario === "guarita") {
-  
-        // window.location.href = "frota.html";
+
         dashcomercial.style.display = "none";
         dashamostras.style.display = "none";
         dashrep.style.display = "none";
@@ -25,12 +23,11 @@ function Logado() {
         console.log("Não logado");
     }
 
-    
+
     btn_exit.addEventListener("click", function Exit(){
         window.location.href = "index.html"
     })
         
-
 
 }
 
