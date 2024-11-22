@@ -17,7 +17,6 @@ function Logado() {
         dashrep.style.display = "none";
         frota.style.display = "none";
         tela.setAttribute("src","https://guarita-qwdptzehtb6cpykgwt67ka.streamlit.app/?embed=true");
-            
 
     } else {
         console.log("Não logado");

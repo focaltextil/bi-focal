@@ -63,3 +63,26 @@ iframe{
     height: 101vh;
 
 }
+
+
+/* ------------------------------------------------------------- */
+/* MOBILE */
+
+@media screen and (max-width: 600px) {
+    header{
+        display: flex;
+        width: 100vw;
+        padding: 7vw;
+        justify-content: space-around;
+        align-items: center;
+        height: 3vw;
+    }
+
+    
+.exit{
+    background-color: orange;
+    width: 50vw;
+    height: 10vw;
+}
+    
+}

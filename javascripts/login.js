@@ -1,4 +1,4 @@
-// // --------------------------LOGICA PARA LOGAR NA PLATAFORMA-----------------
+// // --------------------------LOGICA PARA LOGAR NO SITE-----------------
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
