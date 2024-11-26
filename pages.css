@@ -33,6 +33,16 @@ header{
     height: 3vw;
 }
 
+.menu-home{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15vw;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    gap: 3vw;
+}
+
 section{
     display: flex;
     align-items: center;
@@ -79,10 +89,15 @@ iframe{
     }
 
     
-.exit{
+    .exit{
     background-color: orange;
     width: 50vw;
     height: 10vw;
-}
+    }
+
+    button{
+        width: 50vw;
+        height: 10vw;
+    }
     
 }
