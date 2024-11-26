@@ -14,6 +14,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
             if (user) {
 
                 window.location.href = "./home.html";
+
                 localStorage.setItem("logon", 1)
                 localStorage.setItem("usuario",user.user)
             } else {

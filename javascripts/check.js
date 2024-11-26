@@ -27,9 +27,7 @@ function Logado() {
         window.location.href = "index.html"
     })
         
-
 }
-
 
 window.onload = Logado;
 
