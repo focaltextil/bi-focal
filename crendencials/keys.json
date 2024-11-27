@@ -2,16 +2,16 @@
     {
         "user": "focal",
         "password": "2002",
-        "type": "master"
+        "tela": "home.html"
     },
     {
         "user": "ailton",
         "password": "071954",
-        "type": "master"
+        "tela": "home.html"
     },
     {
         "user": "guarita",
         "password": "123",
-        "type": "user"
+        "tela": "frota.html"
     }
 ]
