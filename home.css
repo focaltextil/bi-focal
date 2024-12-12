@@ -25,7 +25,7 @@ body{
 .menu-home{
     display: flex;
     flex-direction: column;
-    margin-top: 10vw;
+    margin-top: 7vw;
     width: 100vw;
     height: 100vh;
     align-items: center;
