@@ -24,7 +24,7 @@ document.getElementById('btn_entrar').addEventListener('click', function (event)
             if (user) {
                 localStorage.setItem("logon", 1);
                 localStorage.setItem("usuario", user.user);
-                window.location.replace(user.tela); // Redireciona para a tela do usuário
+                window.location.replace(user.tela);
             } else {
                 message.innerText = "Usuário ou senha incorretos!";
                 message.style.color = "red";
@@ -37,10 +37,10 @@ document.getElementById('btn_entrar').addEventListener('click', function (event)
         });
 });
 
-// Função para garantir que o botão "Sair" funcione corretamente
+
 function Logado() {
     document.addEventListener("click", function (event) {
-        // Delegação de evento: verifica se o clique foi no botão "exit"
+    
         if (event.target && event.target.classList.contains("exit")) {
             localStorage.clear();
             localStorage.setItem("logon", 0);
@@ -49,7 +49,7 @@ function Logado() {
     });
 }
 
-// Inicializa a função Logado
+
 window.onload = function () {
     Logado();
 };

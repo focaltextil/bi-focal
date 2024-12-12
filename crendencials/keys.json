@@ -12,6 +12,11 @@
     {
         "user": "guarita",
         "password": "123",
-        "tela": "frota.html"
+        "tela": "frota1.html"
+    },
+    {
+        "user": "estoque",
+        "password": "123",
+        "tela": "estoque1.html"
     }
 ]
