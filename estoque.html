@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pages.css">
-    <script src="./javascripts/login.js"></script>
+    <script async src="./javascripts/login.js"></script>
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
-    <title>Retorno Amostras</title>
+    <title>Consulta de Estoque</title>
 </head>
 <body>
 
@@ -16,16 +16,16 @@
         <a href="./amostras.html"><button class="button">Amostras</button></a>
         <a href="./representantes.html"><button class="button">Representantes</button></a>
         <a href="./frota.html"><button class="button">Gestão de Frota</button></a>
-        <a href="./estoque.html" id="estoque"><button class="button">Consultar Estoque</button></a>
 
-
+        
         <button class="exit" onclick="Logado()">Sair</button>
+
 
     </header>
 
     <section>
 
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiOTE2YjYxMjAtNWQ3NC00ZGUyLWE3YWQtM2YwOTZkM2UxNmU0IiwidCI6ImRmZTI2N2Y3LWVkZTEtNDJiZi04MzZlLWJhMTc4MWJjNWFkNCJ9" frameborder="0"></iframe>
+        <iframe id="tela" src="http://192.168.1.80:3001/" frameborder="0"></iframe>
 
     </section>
     
