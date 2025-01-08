@@ -18,5 +18,10 @@
         "user": "estoque",
         "password": "123",
         "tela": "estoque1.html"
+    },   {
+        "user": "roberta",
+        "password": "f2024",
+        "tela": "home.html"
     }
+
 ]
