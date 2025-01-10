@@ -83,7 +83,7 @@ iframe{
     header{
         display: flex;
         width: 100vw;
-        padding: 7vw;
+        padding: 6vw;
         justify-content: space-around;
         align-items: center;
         height: 3vw;
@@ -92,8 +92,9 @@ iframe{
     
     .exit{
     background-color: orange;
-    width: 50vw;
-    height: 10vw;
+    width: 30vw;
+    height: 6vw;
+
     }
 
     button{
