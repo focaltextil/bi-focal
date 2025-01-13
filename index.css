@@ -175,6 +175,10 @@ button{
         width: 100vw;
     }
 
+    #login-tela video{
+        display: none;
+    }
+
     img{
         display: none;
     }
@@ -193,7 +197,7 @@ button{
         border: none;
         color: var(--cor-container);
         font-weight: bold;
-        font-size: 3vw;
+        font-size: 5vw;
     }
 
     label{
@@ -205,6 +209,7 @@ button{
         width: 90vw;
         height: 10vw;
         font-size: 5vw;
+
     }
 }
 
