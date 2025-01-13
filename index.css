@@ -2,7 +2,7 @@
 :root{
     --cor-bg: #0294b8;
     --cor-texto: #ffffff;
-    --cor-container: #075066;
+    --cor-container: #061233;
 }
 
 *{
@@ -55,6 +55,7 @@ img{
     background-color: var(--cor-container);
     height: 40vh;
     width: 20vw;
+    opacity: 0.9;
 }
 
 #loginForm{
