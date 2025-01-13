@@ -102,6 +102,7 @@ iframe{
     button{
         width: 50vw;
         height: 10vw;
+        font-size: 4vw;
     }
     
 }
