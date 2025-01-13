@@ -6,9 +6,11 @@
 
 
 :root{
-    --cor-bg: #0294b8;
+    --cor-bg: #0B2D56;
     --cor-texto: #ffffff;
     --cor-container: #075066;
+    --cor-btn: #0294b8;
+    --cor-exit-btn: orange;
 }
 
 
@@ -16,7 +18,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #0B2D56;
+    background-color: var(--cor-bg);
     height: 100vh;
     width: 100vw;
     font-family: sans-serif;
@@ -49,12 +51,12 @@ section{
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: #0B2D56;
+    background-color: var(--cor-bg);
 }
 
 
 button{
-    background-color: #0294b8;
+    background-color: var(--cor-btn);
     color: #ffffff;
     padding: 0.3vw;
     margin: 1vw 0;
@@ -67,7 +69,7 @@ button{
 
 
 .exit{
-    background-color: orange;
+    background-color: var(--cor-exit-btn);
     width: 5vw;
 }
 
@@ -82,7 +84,7 @@ iframe{
 /* MOBILE */
 
 @media screen and (max-width: 600px) {
-    
+
     header{
         display: flex;
         width: 100vw;
@@ -95,7 +97,7 @@ iframe{
 
     
     .exit{
-    background-color: orange;
+    background-color: var(--cor-exit-btn);
     width: 30vw;
     height: 6vw;
 
