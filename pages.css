@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 :root{
     --cor-bg: #0B2D56;
     --cor-texto: #ffffff;
@@ -12,7 +11,6 @@
     --cor-btn: #0294b8;
     --cor-exit-btn: orange;
 }
-
 
 body{
     display: flex;
