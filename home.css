@@ -33,6 +33,10 @@ body video {
     opacity: 0.3;
 }
 
+.logo{
+    display: none;
+}
+
 
 .menu-home{
     display: flex;
@@ -57,4 +61,35 @@ button{
 
 .exit{
     background-color: orange;
+    width: 15vw;
 }
+
+/* ------------------------------------------------------------- */
+/* MOBILE */
+
+@media screen and (max-width: 600px) {
+
+    .menu-home{
+        display: flex;
+        justify-content: center;
+    }
+
+    button{
+        margin-top: 4vw;
+        width: 80vw;
+        height: 10vw;
+        font-size: 5vw;
+    }
+
+    .exit{
+        background-color: orange;
+        width: 80vw;
+    }
+
+    .logo{
+        width: 30vw;
+    }
+
+}
+
+/* ------------------------------------------------------------- */
