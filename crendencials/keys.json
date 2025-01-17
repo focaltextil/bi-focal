@@ -28,6 +28,17 @@
         "user": "aloisio",
         "password": "f2025",
         "tela": "home.html"
+    },
+    {
+        "user": "joao",
+        "password": "f2025",
+        "tela": "home.html"
+    },
+    {
+        "user": "amanda",
+        "password": "f2025",
+        "tela": "rh.html"
     }
+
 
 ]
