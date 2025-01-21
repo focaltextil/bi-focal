@@ -25,11 +25,6 @@
         "tela": "home.html"
     },
     {
-        "user": "aloisio",
-        "password": "f2025",
-        "tela": "home.html"
-    },
-    {
         "user": "joao",
         "password": "f2025",
         "tela": "home.html"
@@ -39,6 +34,5 @@
         "password": "f2025",
         "tela": "rh.html"
     }
-
 
 ]
