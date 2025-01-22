@@ -1,38 +1,39 @@
 [
     {
-        "user": "focal",
-        "password": "2002",
-        "tela": "home.html"
-    },
-    {
         "user": "ailton",
         "password": "071954",
         "tela": "home.html"
     },
+
+    {
+        "user": "rafael",
+        "password": "f2002",
+        "tela": "home.html"
+    },
+
     {
         "user": "guarita",
         "password": "123",
         "tela": "frota1.html"
     },
-    {
-        "user": "estoque",
-        "password": "f2025",
-        "tela": "estoque1.html"
-    },
+
     {
         "user": "roberta",
         "password": "f2024",
         "tela": "home.html"
     },
+
+    {
+        "user": "fran",
+        "password": "f2025",
+        "tela": "estoque1.html"
+    },
+    
+
     {
         "user": "joao",
         "password": "f2025",
         "tela": "home.html"
-    },
-    {
-        "user": "amanda",
-        "password": "f2025",
-        "tela": "rh.html"
     }
 
 ]
