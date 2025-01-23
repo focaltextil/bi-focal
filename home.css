@@ -83,6 +83,12 @@ button{
         justify-content: center;
     }
 
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+    }
+
     button{
         margin-top: 4vw;
         width: 80vw;
@@ -93,6 +99,8 @@ button{
     .exit{
         background-color: orange;
         width: 80vw;
+        height: 10vw;
+
     }
 
     .logo{

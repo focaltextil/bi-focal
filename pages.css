@@ -34,6 +34,10 @@ header{
     height: 2.5vw;
 }
 
+.openmenu{
+    display: none;
+}
+
 .menu-home{
     display: flex;
     flex-direction: column;
@@ -78,13 +82,15 @@ iframe{
 }
 
 
+
+
 /* ------------------------------------------------------------- */
 /* MOBILE */
 
 @media screen and (max-width: 600px) {
 
     header{
-        display: flex;
+        display: none;
         width: 100vw;
         padding: 6vw;
         justify-content: right;
@@ -92,8 +98,6 @@ iframe{
         height: 3vw;
     }
 
-
-    
     .exit{
     background-color: var(--cor-exit-btn);
     width: 30vw;
