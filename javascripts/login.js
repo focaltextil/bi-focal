@@ -12,6 +12,7 @@ document.getElementById('btn_entrar').addEventListener('click', function (event)
         return;
     }
 
+    
 
     const googleSheetsUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSU6o-0moYLxGrlKiKFjFav-PFmUKG79CCL4WTOT7q7pQ8_LFqtDGf3uoKhgHqVORc0a8yJrbjThAM2/pub?gid=0&single=true&output=csv';
 
