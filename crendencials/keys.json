@@ -1,39 +1,6 @@
 [
     {
-        "user": "ailton",
-        "password": "071954",
-        "tela": "home.html"
-    },
-
-    {
-        "user": "rafael",
-        "password": "f2002",
-        "tela": "home.html"
-    },
-
-    {
-        "user": "guarita",
-        "password": "123",
-        "tela": "frota1.html"
-    },
-
-    {
-        "user": "roberta",
-        "password": "f2024",
-        "tela": "home.html"
-    },
-
-    {
-        "user": "fran",
-        "password": "f2025",
-        "tela": "estoque1.html"
-    },
-    
-
-    {
-        "user": "joao",
-        "password": "f2025",
-        "tela": "home.html"
+        "link": "'https://docs.google.com/spreadsheets/d/e/2PACX-1vSU6o-0moYLxGrlKiKFjFav-PFmUKG79CCL4WTOT7q7pQ8_LFqtDGf3uoKhgHqVORc0a8yJrbjThAM2/pub?gid=0&single=true&output=csv"
     }
 
 ]
