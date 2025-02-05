@@ -50,12 +50,11 @@ body video {
     gap: 3vw;
 }
 
-.container{
+.container {
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2vw;
 }
-
 button{
     background-color: var(--cor-btn);
     color: #ffffff;
