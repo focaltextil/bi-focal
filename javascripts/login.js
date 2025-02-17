@@ -1,5 +1,4 @@
-
-document.getElementById('btn_entrar').addEventListener('click', function (event) {
+document.getElementById('btn_entrar').addEventListener('click', async function (event) { 
     event.preventDefault();
 
     const username = document.getElementById('username').value.trim();
@@ -12,19 +11,41 @@ document.getElementById('btn_entrar').addEventListener('click', function (event)
         return;
     }
 
+    async function getSheetUrl() {
+        try {
+            const response = await fetch('crendencials/keys.json');
+            if (!response.ok) throw new Error(`Erro ao carregar JSON: ${response.statusText}`);
+    
+            const data = await response.json();
+            console.log("JSON completo:", data);
+   
+            return data[0].link;
+        } catch (error) {
+            console.error(`Erro ao obter URL da planilha: ${error.message}`);
+            alert('Erro ao Acessar Base.');
+            return null;
+        }
+    }
     
 
-    const googleSheetsUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSU6o-0moYLxGrlKiKFjFav-PFmUKG79CCL4WTOT7q7pQ8_LFqtDGf3uoKhgHqVORc0a8yJrbjThAM2/pub?gid=0&single=true&output=csv';
 
+    const googleSheetsUrl = await getSheetUrl(); 
+
+    if (!googleSheetsUrl) {
+        message.innerText = "Erro ao carregar URL da base de dados.";
+        message.style.color = "red";
+        return;
+    }
+
+  
     fetch(googleSheetsUrl)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Erro ao acessar o arquivo de credenciais.');
+                throw new Error('Erro ao acessar o arquivo da planilha.');
             }
             return response.text();
         })
         .then(csvData => {
-    
             const rows = csvData.split('\n').map(row => row.split(','));
             const headers = rows[0];
             const data = rows.slice(1).map(row => {
@@ -34,7 +55,6 @@ document.getElementById('btn_entrar').addEventListener('click', function (event)
                 }, {});
             });
 
-      
             const user = data.find(item => item.user === username && item.password === password && item.Status === "LIBERADO");
 
             if (user) {
