@@ -13,7 +13,7 @@ document.getElementById('btn_entrar').addEventListener('click', async function (
 
     async function getSheetUrl() {
         try {
-            const response = await fetch('crendencials/keys.json');
+            const response = await fetch('home-geral/crendencials/keys.json');
             if (!response.ok) throw new Error(`Erro ao carregar JSON: ${response.statusText}`);
     
             const data = await response.json();
@@ -27,8 +27,6 @@ document.getElementById('btn_entrar').addEventListener('click', async function (
         }
     }
     
-
-
     const googleSheetsUrl = await getSheetUrl(); 
 
     if (!googleSheetsUrl) {
@@ -78,7 +76,7 @@ function Logado() {
         if (event.target && event.target.classList.contains("exit")) {
             localStorage.clear();
             localStorage.setItem("logon", 0);
-            window.location.replace("index.html");
+            window.location.replace("../index.html");
         }
     });
 }
