@@ -4,6 +4,12 @@ document.getElementById('btn_entrar').addEventListener('click', async function (
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value.trim();
     const message = document.getElementById('message');
+    const session_logged = document.getElementById("logged-screen");
+    const login = document.getElementById("login-tela");
+    const tela_user = document.getElementById("tela");
+
+    
+    
 
     if (!username || !password) {
         message.innerText = "Preencha todos os campos.";
@@ -17,7 +23,6 @@ document.getElementById('btn_entrar').addEventListener('click', async function (
             if (!response.ok) throw new Error(`Erro ao carregar JSON: ${response.statusText}`);
     
             const data = await response.json();
-            console.log("JSON completo:", data);
    
             return data[0].link;
         } catch (error) {
@@ -56,9 +61,12 @@ document.getElementById('btn_entrar').addEventListener('click', async function (
             const user = data.find(item => item.user === username && item.password === password && item.Status === "LIBERADO");
 
             if (user) {
+    
                 localStorage.setItem("logon", 1);
                 localStorage.setItem("usuario", user.user);
-                window.location.replace(user.tela);
+                login.style.display = "none";
+                session_logged.style.display = "block";
+                tela_user.src = user.tela;
             } else {
                 message.innerText = "Usuário ou senha incorreto!";
                 message.style.color = "red";

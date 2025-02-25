@@ -1,17 +1,16 @@
-
-:root{
+:root {
     --cor-bg: #0294b8;
     --cor-texto: #ffffff;
     --cor-container: #061233;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +22,7 @@ body{
     overflow-y: hidden;
 }
 
-.login-screen{
+.login-screen {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,29 +31,29 @@ body{
     height: 100vh;
     width: 100vw;
     font-family: sans-serif;
-    z-index: 1;
+    z-index: 100;
 }
 
-.tela{
+#logged-screen {
     display: none;
 }
 
-.tela iframe{
+#tela {
     width: 100vw;
     height: 100vh;
 }
 
-img{
+img {
     width: 150px;
 }
 
-.label-logo{
+.label-logo {
     color: var(--cor-texto);
     margin: 1vw;
     font-weight: bold;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,14 +66,14 @@ img{
     opacity: 0.9;
 }
 
-#loginForm{
+#loginForm {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
 }
 
-input{
+input {
     margin: 1vw;
     width: 100%;
     outline: none;
@@ -84,21 +83,21 @@ input{
     color: var(--cor-container);
     font-weight: bold;
     font-size: 0.9vw;
-    
+
 }
 
-label{
+label {
     color: var(--cor-texto);
     font-weight: 300;
     font-size: 1vw;
 }
 
-#message{
+#message {
     color: var(--cor-texto);
     margin-top: 1vw;
 }
 
-button{
+button {
     margin-top: 1vw;
     width: 100%;
     height: 35px;
@@ -107,33 +106,33 @@ button{
     background-color: var(--cor-bg);
     border-radius: 2px;
     cursor: pointer;
-    
+
 }
 
-#message{
+#message {
     color: rgb(228, 213, 12);
 }
 
 
-.sumir{
+.sumir {
     display: none;
 }
 
 
-.container-logado{
+.container-logado {
     position: absolute;
     width: 100vw;
     height: 100vh;
 }
 
-.container-dashboard{
+.container-dashboard {
     display: flex;
     flex-direction: column;
     gap: 20px;
     height: 100vh;
 }
 
-.btn-dash{
+.btn-dash {
     display: flex;
     background: #0B2D56;
     justify-content: space-around;
@@ -144,7 +143,7 @@ button{
 
 }
 
-.btn-dash button{
+.btn-dash button {
     background-color: #ffffff;
     color: #0B2D56;
     font-weight: bold;
@@ -152,7 +151,7 @@ button{
     box-shadow: 1px 2px 7px rgb(49, 49, 49);
 }
 
-.bi{
+.bi {
     width: 100vw;
     height: 100vh;
 }
@@ -172,7 +171,7 @@ button{
 /* MOBILE */
 
 @media screen and (max-width: 600px) {
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -184,20 +183,20 @@ button{
         width: 100vw;
     }
 
-    #login-tela video{
+    #login-tela video {
         display: none;
     }
 
-    img{
+    img {
         display: none;
     }
 
-    
-    .label-logo{
+
+    .label-logo {
         display: none;
     }
 
-    input{
+    input {
         margin-bottom: 3vw;
         width: 100%;
         outline: none;
@@ -209,11 +208,11 @@ button{
         font-size: 5vw;
     }
 
-    label{
+    label {
         font-size: 7vw;
     }
 
-    .btn{
+    .btn {
         margin-top: 4vw;
         width: 90vw;
         height: 10vw;
