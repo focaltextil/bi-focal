@@ -39,8 +39,9 @@ body {
 }
 
 #tela {
+    margin-top: 1.5vw;
     width: 100vw;
-    height: 100vh;
+    height: 101vh;
 }
 
 img {
