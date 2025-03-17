@@ -27,7 +27,7 @@ window.addEventListener("load", function () {
 
     async function obterDadosPlanilha() {
         try {
-            const response = await fetch("../javascript/keys.json");
+            const response = await fetch("../js/keys.json");
             if (!response.ok) throw new Error("Erro ao carregar arquivo keys.json");
 
             const data = await response.json();
