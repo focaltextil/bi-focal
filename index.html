@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <title>Focal Gestão</title>
+</head>
+
+<body>
+
+    <div id="container-login" class="container">
+
+
+        <form id="loginForm" class="form">
+
+        <img class="logo" src="./img/logo.png" alt="">
+
+            <div class="campos">
+
+                <label for="username">Usuário</label>
+
+                <input id="input-user" type="text">
+
+                <label for="password">Senha</label>
+
+                <input id="password" type="password">
+
+            </div>
+            <button type="submit">Entrar</button>
+
+            <p id="alert" class="message"></p>
+
+        </form>
+
+    </div>
+
+    <div class="screen-logged">
+
+        <div>
+
+            <div class="sidebar" id="sidebar">
+
+                <img src="./img/logo.png" alt="">
+
+                <span class="close-btn" onclick="toggleMenu()">&times;</span>
+                
+
+            </div>
+
+            <div class="msg">
+
+                <img src="../img/menuicon.png" id="menu-icon">
+
+                <h2 id="logged-message"></h2>
+
+                <button class="exit-btn" onclick="Exit()">Sair</button>
+
+            </div>
+
+            <iframe id="iframe" src=""></iframe>
+
+        </div>
+
+    </div>
+
+    <script src="./javascript/script.js"></script>
+
+</body>
+
+</html>
