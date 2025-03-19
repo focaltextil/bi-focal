@@ -100,6 +100,7 @@ window.addEventListener("load", function () {
                 botao.textContent = modulo;
                 botao.onclick = function () {
                     document.getElementById("iframe").src = `${modulo}.html`;
+                    toggleMenu();
                 };
 
                 sidebar.appendChild(botao);
@@ -116,6 +117,7 @@ window.addEventListener("load", function () {
 
         document.getElementById("container-login").classList.add("desapear");
         document.getElementById("logged-message").innerHTML = `Logado como ${userData.nickname}`;
+        
     }
 });
 
