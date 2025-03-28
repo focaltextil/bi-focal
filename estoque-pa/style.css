@@ -41,6 +41,18 @@ img{
     width: 15vw;
 }
 
+.total-row{
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    color: var(--card_cor);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 15vw;
+    max-width: 400px;
+}
+
 /* -------------------------------------------------------------- */
 
 @media screen and (max-width: 768px) {

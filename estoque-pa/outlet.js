@@ -42,6 +42,8 @@ function renderTable(data) {
     const renderContainer = document.getElementById("render-container");
     renderContainer.innerHTML = '';
 
+    let totalEstoque = 0;
+
     data.forEach(row => {
         const tableRow = document.createElement("tr");
 
@@ -52,10 +54,12 @@ function renderTable(data) {
         tdNome.textContent = row[1] || 'Sem Nome';
 
         const tdEstoque = document.createElement("td");
+        const estoque = parseFloat(row[2]?.replace(',', '.') || 0);
+        totalEstoque += isNaN(estoque) ? 0 : estoque;
         tdEstoque.textContent = row[2]?.replace('.', ',') || '0';
 
-        const tdlocalizacao = document.createElement("td");
-        tdlocalizacao.textContent = row[3] || 'Sem Nome';
+        const tdLocalizacao = document.createElement("td");
+        tdLocalizacao.textContent = row[3] || 'Sem Nome';
 
         const tdObs = document.createElement("td");
         tdObs.textContent = row[4] || '';
@@ -64,12 +68,23 @@ function renderTable(data) {
         tableRow.appendChild(tdNome);
         tableRow.appendChild(tdEstoque);
         tableRow.appendChild(tdObs);
-        tableRow.appendChild(tdlocalizacao);
-        
+        tableRow.appendChild(tdLocalizacao);
 
         renderContainer.appendChild(tableRow);
     });
+
+    const totalRow = document.createElement("div");
+    totalRow.className = "total-row"; 
+
+    totalRow.innerHTML = `
+        <td colspan="2"><strong>Total:</strong></td>
+        <td><strong>${totalEstoque.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</strong></td>
+        <td colspan="2"></td>
+    `;
+
+    renderContainer.appendChild(totalRow);
 }
+
 
 function renderCards(data) {
     const cardContainer = document.getElementById("card-container");
@@ -113,8 +128,31 @@ function updateView() {
 function renderData(data) {
     renderTable(data);
     renderCards(data); 
+    renderTotalCard(data);
     updateView(); 
 }
+
+function renderTotalCard(data) {
+    const cardContainer = document.getElementById("card-container");
+    
+    const totalEstoque = data.reduce((sum, row) => {
+        const estoque = parseFloat(row[2]?.replace(",", ".") || 0); 
+        return sum + (isNaN(estoque) ? 0 : estoque);
+    }, 0);
+
+    const totalCard = document.createElement("div");
+    totalCard.className = "card total-card";
+    totalCard.innerHTML = `
+        <div class="card-content">
+            <h3>Total do Estoque</h3>
+            <p><strong>${totalEstoque.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</strong></p>
+        </div>
+    `;
+
+    cardContainer.appendChild(totalCard);
+}
+
+
 
 async function init() {
 
