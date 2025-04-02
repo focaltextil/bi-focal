@@ -1,7 +1,14 @@
-:root {
+/* :root {
     --cor_texto: #ffffff;
     --bg_cor: #e1e0ee;
     --card_cor: #06087A;
+} */
+
+:root {
+    --cor_texto: #9daec2;
+    --bg_cor: #051e33;
+    --card_cor: #2684d1;
+    --cor-container: #082946;
 }
 
 * {
@@ -22,7 +29,7 @@ header {
     align-items: center;
     padding: 1vw;
     margin-bottom: 1vw;
-    background-color: #fff;
+    background-color: var(--bg_cor);
     box-shadow: 0px 3px 10px 2px #00000020;
 }
 
@@ -37,7 +44,7 @@ header img {
 }
 
 header h2 {
-    color: var(--card_cor);
+    color: var(--cor_texto);
 }
 
 header .btns {
@@ -46,6 +53,9 @@ header .btns {
 }
 
 header .btns input {
+    background-color: #000000;
+    color: var(--cor_texto);
+    font-weight: bold;
     padding: 0.5vw;
     border: 1px solid #ccc;
     border-radius: 0.3vw;
@@ -53,7 +63,7 @@ header .btns input {
 
 header .btns button {
     background-color: var(--card_cor);
-    color: var(--cor_texto);
+    color: var(--bg_cor);
     border: none;
     padding: 0.5vw 1vw;
     border-radius: 0.3vw;
@@ -62,8 +72,8 @@ header .btns button {
 
 .container {
     margin: 1vw;
-    padding: 1vw 4vw;
-    background-color: #fff;
+    padding: 1vw;
+    background-color: var(--cor-container);
     border-radius: 0.5vw;
     box-shadow: 0px 3px 10px 2px #00000020;
 }
@@ -86,33 +96,35 @@ header .btns button {
 table {
     width: 100%;
     border-collapse: collapse;
+    color: var(--cor_texto);
 }
 
 table th,
 table td {
     padding: 1vw;
     text-align: left;
-    border: 1px solid #ccc;
+    border: 1px solid var(--bg_cor);
 }
 
 table th {
-    background-color: var(--card_cor);
+    background-color: var(--bg_cor);
     color: var(--cor_texto);
     
 }
 
 table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+    color: var(--cor_texto);
+    /* background-color: var(--bg_cor); */
 }
 
 table tbody tr:hover {
-    background-color: #e1e0ee;
+    background-color: black;
 }
 
 
 .card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: var(--bg_cor);
+    border: none;
     border-radius: 8px;
     margin: 10px;
     padding: 15px;
@@ -125,18 +137,18 @@ table tbody tr:hover {
 .card h4 {
     margin: 0 0 10px;
     font-size: 18px;
-    color: #333;
+    color: var(--cor_texto);
 }
 
 .card p {
     margin: 5px 0;
     font-size: 14px;
-    color: #555;
+    color: white;
 }
 
 .total-row{
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: black;
+    border: none;
     color: var(--card_cor);
     border-radius: 8px;
     margin: 10px;
@@ -144,6 +156,10 @@ table tbody tr:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 15vw;
     max-width: 400px;
+}
+
+.total-card{
+    color: var(--cor_texto);
 }
 /* -------------------------------------------------------------- */
 

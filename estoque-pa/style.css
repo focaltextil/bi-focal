@@ -1,7 +1,14 @@
-:root {
+/* :root {
     --cor_texto: #ffffff;
     --bg_cor: #ffffff;
     --card_cor: #2684d1;
+} */
+
+:root {
+    --cor_texto: #ffffff;
+    --bg_cor: #000000;
+    --card_cor: #2684d1;
+    --cor-container: #082946;
 }
 
 * {
@@ -28,7 +35,7 @@ body {
 }
 
 button {
-    background-color: var(--card_cor);
+    background-color: var(--cor-container);
     color: var(--cor_texto);
     width: 15vw;
     border: none;
@@ -38,7 +45,7 @@ button {
 }
 
 img{
-    width: 15vw;
+    width: 10vw;
 }
 
 .total-row{
