@@ -202,6 +202,9 @@ iframe{
     justify-content: center;
 }
 
+#user_photo{
+    width: 2vw;
+}
 
 /* ---------------------------------------------------- */
 
@@ -222,6 +225,10 @@ iframe{
 
     #menu-icon{
         width: 8vw;
+    }
+
+    #user_photo{
+        display: none;
     }
     
 

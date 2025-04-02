@@ -116,7 +116,8 @@ window.addEventListener("load", function () {
         }
 
         document.getElementById("container-login").classList.add("desapear");
-        document.getElementById("logged-message").innerHTML = `Logado como ${userData.nickname}`;
+        document.getElementById("logged-message").innerHTML = userData.nickname;
+
         
     }
 });
