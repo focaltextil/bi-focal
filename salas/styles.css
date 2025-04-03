@@ -163,15 +163,42 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media screen and (max-width: 720px){
 
-    .container{
-        height: 100vh;
+    body {
+        display: flex;
+        padding: 2vw;
+        gap: 1vw;
+    }
+
+    .sala select, 
+    .data input, 
+    .hora_inicio select, 
+    .hora_fim select {
+        width: 90vw;
+        padding: 1vw;
+        margin: 2vw;
+    }
+
+    .container {
+        padding-top: 5vw;
         width: 100vw;
+        min-height: 100vh;
+        justify-content: start;
+    }
+
+    .btn_enviar {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #btn_agendar {
+        font-size: 5vw;
+        padding: 1vw 5vw;
     }
 
     .agendamento{
         flex-direction: column;
+        gap: 5vw;
+        margin-bottom: 5vw;
     }
-
-
 
 }
