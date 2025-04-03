@@ -197,7 +197,7 @@ iframe{
 #logged-message{
     text-transform: capitalize;
     display: flex;
-    margin-left: 65vw;
+    margin-left: 75vw;
     font-size: 1vw;
     justify-content: center;
 }

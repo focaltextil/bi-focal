@@ -1,0 +1,177 @@
+:root {
+    --cor_texto: #ffffff;
+    --bg_cor: #051e33;
+    --card_cor: #082946;
+    --cor-container: #0d3b66;
+    --cor-botao: #2684d1;
+    --cor-botao-hover: #1a5d9a;
+    --cor-excluir: #ff4d4d;
+    --cor-excluir-hover: #cc0000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    background-color: var(--bg_cor);
+    gap: 5vw;
+}
+
+h1 {
+    color: var(--cor_texto);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background-color: var(--card_cor);
+    color: var(--cor_texto);
+    padding: 2vw;
+    width: 60vw;
+    min-height: 60vh;
+    border-radius: 0.5vw;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.agendamento {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1vw 0;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.sala, .data, .hora_inicio, .hora_fim {
+    background-color: var(--cor-container);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5vw;
+    padding: 0.5vw 1vw;
+}
+
+.sala select, 
+.data input, 
+.hora_inicio select, 
+.hora_fim select {
+    background-color: var(--cor-container);
+    color: var(--cor_texto);
+    border: 1px solid #fff;
+    padding: 0.3vw;
+    border-radius: 0.3vw;
+    text-align: center;
+    margin-top: 0.5vw;
+    min-width: 8vw;
+}
+
+#horarios-ocupados {
+    min-height: 20vw;
+    background-color: var(--cor-container);
+    border-radius: 0.5vw;
+    padding: 1vw;
+}
+
+#horarios-ocupados h2 {
+    margin-top: 1vw;
+}
+
+#lista-horarios {
+    margin-top: 2vw;
+    max-height: 15vw;
+    overflow-y: auto;
+    text-align: left;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    font-size: 1.2vw;
+}
+
+
+
+#form {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn_enviar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vw;
+}
+
+#btn_agendar {
+    background-color: var(--cor-botao);
+    padding: 0.5vw;
+    margin: 0.5vw;
+    border-radius: 0.5vw;
+    color: var(--cor_texto);
+    cursor: pointer;
+    min-width: 10vw;
+    transition: background 0.3s ease-in-out;
+}
+
+#btn_agendar:hover {
+    background-color: var(--cor-botao-hover);
+}
+
+.btn-excluir {
+    background-color: var(--cor-excluir);
+    color: var(--cor_texto);
+    padding: 0.2vw 1vw;
+    margin-left: 0.5vw;
+    border-radius: 0.3vw;
+    float: right;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-excluir:hover {
+    background-color: var(--cor-excluir-hover);
+}
+
+#spinner {
+    position: fixed;
+    background-color: var(--bg_cor);
+    color: var(--cor_texto);
+    width: 100vw;
+    height: 100vh;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+@media screen and (max-width: 720px){
+
+    .container{
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .agendamento{
+        flex-direction: column;
+    }
+
+
+
+}

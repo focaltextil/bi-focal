@@ -82,6 +82,11 @@ window.addEventListener("load", function () {
     function realizarLogin(userData) {
         sessionStorage.setItem("logon", "1");
         sessionStorage.setItem("currentUser", userData.user);
+
+        window.dispatchEvent(new Event("storage")); 
+
+        sessionStorage.setItem("user_name", userData.nickname);
+        
         atualizarInterface(userData);
     }
 

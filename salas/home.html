@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Sala</title>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+
+    <div id="spinner" style="display: none;">
+
+        Carregando...
+
+    </div>
+
+
+    <div class="container">
+
+
+        <div class="btn_enviar">
+
+            <h1>Reservar Sala</h1>
+
+            <button type="submit" id="btn_agendar">Salvar</button>
+
+        </div>
+
+        <form id="form">
+
+            <div class="agendamento">
+
+
+                <div class="sala">
+
+                    <h4>Sala</h4>
+    
+                    <select id="sala">
+    
+                        <option value="Sala De Reunião">Sala De Reunião</option>
+    
+                        <option value="Sala De Treinamento">Sala De Treinamento</option>
+    
+                    </select>
+    
+                </div>
+
+
+                <div class="data">
+
+                    <h4>Data</h4>
+
+                    <input type="date" id="data" required>
+
+
+                </div>
+
+                <div class="hora_inicio">
+
+                    <h4>Início</h4>
+
+                    <select id="hora-inicio" required>
+
+                    </select>
+
+
+                </div>
+
+                <div class="hora_fim">
+
+
+                    <h4>Fim</h4>
+
+
+                    <select id="hora-fim" required>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+        </form>
+
+        <div id="mensagem"></div>
+
+        <div id="horarios-ocupados">
+
+            <h2>Próximas Reuniões</h2>
+
+            <ul id="lista-horarios">
+
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
