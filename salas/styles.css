@@ -139,9 +139,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     display: flex;
     flex-direction: column;
     gap: 1vw;
-    font-size: 1.2vw;
+    font-size: 1vw;
 }
-
 
 
 #form {
@@ -202,44 +201,92 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 /* ---------------------------------------------------------- */
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 720px) {
 
     body {
-        display: flex;
-        padding: 2vw;
-        gap: 1vw;
-    }
-
-    .sala select, 
-    .data input, 
-    .hora_inicio select, 
-    .hora_fim select {
-        width: 90vw;
-        padding: 1vw;
-        margin: 2vw;
+        flex-direction: column;
+        padding: 4vw;
+        gap: 3vw;
     }
 
     .container {
-        padding-top: 5vw;
-        width: 100vw;
-        min-height: 100vh;
-        justify-content: start;
+        width: 100%;
+        height: 100vh;
+        padding: 2vw;
     }
 
     .btn_enviar {
+        display: flex;
         flex-direction: row;
         align-items: center;
+        gap: 2vw;
+        text-align: center;
+        margin-bottom: 2vw;
+    }
+
+    h1 {
+        font-size: 6vw;
     }
 
     #btn_agendar {
         font-size: 5vw;
-        padding: 1vw 5vw;
+        padding: 2vw 6vw;
+        border-radius: 8px;
     }
 
-    .agendamento{
+    .agendamento {
+        display: flex;
         flex-direction: column;
-        gap: 5vw;
-        margin-bottom: 5vw;
+        gap: 4vw;
     }
 
+    .linha-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4vw;
+    }
+
+    .subcontainer1,
+    .subcontainer2 {
+        display: flex;
+        flex-direction: column;
+        gap: 3vw;
+        width: 80vw;
+    }
+
+    .sala, .titulo, .hora_inicio, .hora_fim{
+        padding: 1vw !important;
+    }
+
+    .sala select,
+    .data input,
+    .hora_inicio input,
+    .hora_fim input,
+    .titulo input {
+        width: 100%;
+        padding: 3vw 2vw !important;
+        font-size: 4vw;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin: 4vw 0;
+    }
+
+    h4 {
+        font-size: 4.5vw;
+        margin-bottom: 1vw;
+    }
+
+    #horarios-ocupados {
+        display: none;
+    }
+
+    #horarios-ocupados h2 {
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    #lista-horarios {
+        font-size: 4vw;
+        padding-left: 5vw;
+    }
 }
