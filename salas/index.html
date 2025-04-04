@@ -34,59 +34,73 @@
         <form id="form">
 
             <div class="agendamento">
+        
+                <div class="linha-container">
+
+                    <div class="subcontainer1">
+
+                        <div class="sala">
+
+                            <h4>Sala</h4>
+
+                            <select id="sala">
+
+                                <option value="Sala De Reunião">Sala De Reunião</option>
+
+                                <option value="Sala De Treinamento">Sala De Treinamento</option>
+
+                            </select>
+                        </div>
+
+                        <div class="titulo">
+
+                            <h4>Título</h4>
+
+                            <input type="text" id="titulo">
+
+                        </div>
+
+                    </div>
+        
+                    <div class="subcontainer2">
+
+                        <div class="data">
+
+                            <h4>Data</h4>
+
+                            <input type="date" id="data" required>
+
+                        </div>
+
+                        <div class="hora_inicio">
+
+                            <h4>Início</h4>
+
+                            <!-- <select id="hora-inicio" required></select> -->
+
+                            <input type="time" id="hora-inicio" step="600" min="07:00" max="17:00">
+
+                        </div>
+
+                        <div class="hora_fim">
+
+                            <h4>Fim</h4>
+
+                            <!-- <select id="hora-fim" required></select> -->
+
+                            <input type="time" id="hora-fim" step="600">
 
 
-                <div class="sala">
+                        </div>
 
-                    <h4>Sala</h4>
-    
-                    <select id="sala">
-    
-                        <option value="Sala De Reunião">Sala De Reunião</option>
-    
-                        <option value="Sala De Treinamento">Sala De Treinamento</option>
-    
-                    </select>
-    
+                    </div>
+
                 </div>
-
-
-                <div class="data">
-
-                    <h4>Data</h4>
-
-                    <input type="date" id="data" required>
-
-
-                </div>
-
-                <div class="hora_inicio">
-
-                    <h4>Início</h4>
-
-                    <select id="hora-inicio" required>
-
-                    </select>
-
-
-                </div>
-
-                <div class="hora_fim">
-
-
-                    <h4>Fim</h4>
-
-
-                    <select id="hora-fim" required>
-
-                    </select>
-
-                </div>
-
-
+        
             </div>
-
+            
         </form>
+        
 
         <div id="mensagem"></div>
 

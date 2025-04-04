@@ -25,12 +25,12 @@ body {
     justify-content: center; 
     align-items: center; 
     background-color: var(--bg_cor);
-    gap: 5vw;
 }
 
 h1 {
     color: var(--cor_texto);
 }
+
 
 .container {
     display: flex;
@@ -47,17 +47,39 @@ h1 {
 }
 
 .agendamento {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 1vw 0;
+}
+
+.subcontainer1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1vw;
+}
+
+.subcontainer2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1vw;
+    width: 100%;
+    margin-bottom: 1vw;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
 
-.sala, .data, .hora_inicio, .hora_fim {
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.titulo{
+    border: none;
+}
+
+.sala, .data, .hora_inicio,.hora_fim{
     background-color: var(--cor-container);
     display: flex;
     flex-direction: column;
@@ -66,9 +88,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .sala select, 
-.data input, 
-.hora_inicio select, 
-.hora_fim select {
+.titulo {
     background-color: var(--cor-container);
     color: var(--cor_texto);
     border: 1px solid #fff;
@@ -76,7 +96,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-radius: 0.3vw;
     text-align: center;
     margin-top: 0.5vw;
-    min-width: 8vw;
+    min-width: 26vw;
+}
+
+.titulo{
+    border: none;
+    margin: 0;
+}
+
+.hora_inicio input, 
+.data input,
+.titulo input,
+.hora_fim input {
+    background-color: var(--cor-container);
+    color: var(--cor_texto);
+    border: 1px solid #fff;
+    padding: 0.3vw;
+    border-radius: 0.3vw;
+    text-align: center;
+    margin-top: 0.5vw;
+    min-width: 15vw;
+    outline: none;
 }
 
 #horarios-ocupados {
@@ -160,6 +200,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     z-index: 1000;
 }
 
+/* ---------------------------------------------------------- */
 
 @media screen and (max-width: 720px){
 
