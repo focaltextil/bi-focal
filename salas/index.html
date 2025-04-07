@@ -33,12 +33,10 @@
         </div>
 
         <form id="form">
-
-            <div class="agendamento">
         
                 <div class="linha-container">
 
-                    <div class="subcontainer1">
+                    <div class="subcontainer">
 
                         <div class="sala">
 
@@ -61,10 +59,6 @@
 
                         </div>
 
-                    </div>
-        
-                    <div class="subcontainer2">
-
                         <div class="data">
 
                             <h4>Data</h4>
@@ -77,20 +71,15 @@
 
                             <h4>Início</h4>
 
-                            <!-- <select id="hora-inicio" required></select> -->
-
                             <input type="time" id="hora-inicio" step="600" min="07:00" max="17:00">
 
                         </div>
 
                         <div class="hora_fim">
 
-                            <h4>Fim</h4>
-
-                            <!-- <select id="hora-fim" required></select> -->
+                            <h4>Término</h4>
 
                             <input type="time" id="hora-fim" step="600">
-
 
                         </div>
 
@@ -98,7 +87,6 @@
 
                 </div>
         
-            </div>
             
         </form>
         
@@ -107,12 +95,22 @@
 
         <div id="horarios-ocupados">
 
-            <h2>Próximas Reuniões</h2>
+            <h2 id="agenda_title">Próximas Reuniões</h2>
 
-            <ul id="lista-horarios">
-
-
-            </ul>
+            <table>
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Sala</th>
+                    <th>Início</th>
+                    <th>Término</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="lista-horarios">
+                  <!-- Linhas serão inseridas aqui -->
+                </tbody>
+              </table>
 
         </div>
 

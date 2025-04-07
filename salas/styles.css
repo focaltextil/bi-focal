@@ -40,8 +40,8 @@ h1 {
     background-color: var(--card_cor);
     color: var(--cor_texto);
     padding: 2vw;
-    width: 60vw;
-    min-height: 60vh;
+    width: 90vw;
+    min-height: 85vh;
     border-radius: 0.5vw;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
@@ -50,22 +50,15 @@ h1 {
     align-items: center;
 }
 
-.subcontainer1 {
+.subcontainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 1vw;
+    gap: 1vw;
 }
 
-.subcontainer2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1vw;
-    width: 100%;
-    margin-bottom: 1vw;
-}
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
@@ -96,7 +89,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border-radius: 0.3vw;
     text-align: center;
     margin-top: 0.5vw;
-    min-width: 26vw;
+    min-width: 10vw;
 }
 
 .titulo{
@@ -120,7 +113,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 #horarios-ocupados {
-    min-height: 20vw;
+    min-height: 25vw;
     background-color: var(--cor-container);
     border-radius: 0.5vw;
     padding: 1vw;
@@ -128,18 +121,41 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 #horarios-ocupados h2 {
     margin-top: 1vw;
+    text-align: left;
 }
 
-#lista-horarios {
-    margin-top: 2vw;
-    max-height: 15vw;
-    overflow-y: auto;
-    text-align: left;
-    padding: 1vw;
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1vw;
+    color: var(--cor_texto);
     font-size: 1vw;
+}
+
+th, td {
+    border: 1px solid #ffffff55;
+    padding: 0.5vw 1vw;
+    text-align: left;
+}
+
+th {
+    background-color: var(--cor-container);
+    color: var(--cor_texto);
+}
+
+.col-acoes button {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff22;
+}
+
+tbody tr:hover {
+    background-color: var(--cor-botao-hover);
+    transition: background 0.3s;
 }
 
 
@@ -246,7 +262,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
         gap: 4vw;
     }
 
-    .subcontainer1,
     .subcontainer2 {
         display: flex;
         flex-direction: column;
