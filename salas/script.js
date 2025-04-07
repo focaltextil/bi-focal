@@ -157,6 +157,7 @@ window.addEventListener('load', function () {
         return horarios;
     }
 
+
     function atualizarListaOcupados() {
         const tabela = document.getElementById('lista-horarios');
         const title = document.getElementById("agenda_title");
@@ -172,43 +173,46 @@ window.addEventListener('load', function () {
         const reservas = horariosOcupados[salaSelecionada]?.[dataSelecionada] || [];
     
         reservas
-            .sort((a, b) => a.inicio.localeCompare(b.inicio))
-            .forEach(intervalo => {
-                const tr = document.createElement('tr');
-    
-                const tdNome = document.createElement('td');
-                tdNome.textContent = intervalo.nome;
-    
-                const tdProfissional = document.createElement('td');
-                tdProfissional.textContent = salaSelecionada;
-    
-                const tdInicio = document.createElement('td');
-                tdInicio.textContent = formatarHorario(intervalo.inicio);
-    
-                const tdFim = document.createElement('td');
-                tdFim.textContent = formatarHorario(intervalo.fim);
-    
-                const tdAcoes = document.createElement('td');
-                const btnExcluir = document.createElement('button');
-                btnExcluir.classList.add('btn-excluir');
-                btnExcluir.textContent = 'Cancelar';
-                
-                btnExcluir.title = 'Excluir reserva';
-                btnExcluir.dataset.id = intervalo.id;
-                btnExcluir.style.cursor = 'pointer';
-                btnExcluir.addEventListener('click', excluirReserva);
-                tdAcoes.classList.add('col-acoes');
-                tdAcoes.appendChild(btnExcluir);
-    
-                tr.appendChild(tdNome);
-                tr.appendChild(tdProfissional);
-                tr.appendChild(tdInicio);
-                tr.appendChild(tdFim);
-                tr.appendChild(tdAcoes);
-    
-                tabela.appendChild(tr);
-            });
-    }
+    .sort((a, b) => a.inicio.localeCompare(b.inicio))
+    .forEach(intervalo => {
+        const tr = document.createElement('tr');
+
+        const tdNome = document.createElement('td');
+        tdNome.textContent = intervalo.nome;
+
+        const tdProfissional = document.createElement('td');
+        tdProfissional.textContent = salaSelecionada;
+
+        const tdInicio = document.createElement('td');
+        tdInicio.textContent = formatarHorario(intervalo.inicio);
+
+        const tdFim = document.createElement('td');
+        tdFim.textContent = formatarHorario(intervalo.fim);
+
+        const tdAcoes = document.createElement('td');
+        tdAcoes.classList.add('col-acoes');
+
+        if (intervalo.nome === user_name) {
+            const btnExcluir = document.createElement('button');
+            btnExcluir.classList.add('btn-excluir');
+            btnExcluir.textContent = 'Cancelar';
+            btnExcluir.title = 'Excluir reserva';
+            btnExcluir.dataset.id = intervalo.id;
+            btnExcluir.style.cursor = 'pointer';
+            btnExcluir.addEventListener('click', excluirReserva);
+            tdAcoes.appendChild(btnExcluir);
+        }
+
+        tr.appendChild(tdNome);
+        tr.appendChild(tdProfissional);
+        tr.appendChild(tdInicio);
+        tr.appendChild(tdFim);
+        tr.appendChild(tdAcoes);
+
+        tabela.appendChild(tr);
+    });
+
+}
     
 
     async function excluirReserva(event) {

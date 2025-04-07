@@ -5,8 +5,8 @@
     --cor-container: #0d3b66;
     --cor-botao: #2684d1;
     --cor-botao-hover: #1a5d9a;
-    --cor-excluir: #ff4d4d;
-    --cor-excluir-hover: #cc0000;
+    --cor-excluir: #e0a80b;
+    --cor-excluir-hover: #eb0b03;
 }
 
 * {
@@ -135,7 +135,7 @@ table {
 th, td {
     border: 1px solid #ffffff55;
     padding: 0.5vw 1vw;
-    text-align: left;
+    text-align: center;
 }
 
 th {
@@ -144,7 +144,7 @@ th {
 }
 
 .col-acoes button {
-    display: inline-block;
+    display: flex;
     margin: 0 auto;
 }
 
@@ -164,12 +164,24 @@ tbody tr:hover {
     flex-direction: column;
 }
 
-.btn_enviar {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1vw;
 }
+
+.caixa{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5vw;
+}
+
+.header img{
+    width: 10vw;
+}
+
 
 #btn_agendar {
     background-color: var(--cor-botao);
@@ -190,9 +202,7 @@ tbody tr:hover {
     background-color: var(--cor-excluir);
     color: var(--cor_texto);
     padding: 0.2vw 1vw;
-    margin-left: 0.5vw;
     border-radius: 0.3vw;
-    float: right;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
 }
@@ -217,91 +227,9 @@ tbody tr:hover {
 
 /* ---------------------------------------------------------- */
 
-@media screen and (max-width: 720px) {
-
-    body {
-        flex-direction: column;
-        padding: 4vw;
-        gap: 3vw;
-    }
-
-    .container {
-        width: 100%;
-        height: 100vh;
-        padding: 2vw;
-    }
-
-    .btn_enviar {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2vw;
-        text-align: center;
-        margin-bottom: 2vw;
-    }
-
-    h1 {
-        font-size: 6vw;
-    }
-
-    #btn_agendar {
-        font-size: 5vw;
-        padding: 2vw 6vw;
-        border-radius: 8px;
-    }
-
-    .agendamento {
-        display: flex;
-        flex-direction: column;
-        gap: 4vw;
-    }
-
-    .linha-container {
-        display: flex;
-        flex-direction: column;
-        gap: 4vw;
-    }
-
-    .subcontainer2 {
-        display: flex;
-        flex-direction: column;
-        gap: 3vw;
-        width: 80vw;
-    }
-
-    .sala, .titulo, .hora_inicio, .hora_fim{
-        padding: 1vw !important;
-    }
-
-    .sala select,
-    .data input,
-    .hora_inicio input,
-    .hora_fim input,
-    .titulo input {
-        width: 100%;
-        padding: 3vw 2vw !important;
-        font-size: 4vw;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        margin: 4vw 0;
-    }
-
-    h4 {
-        font-size: 4.5vw;
-        margin-bottom: 1vw;
-    }
-
-    #horarios-ocupados {
+@media (max-width: 768px) {
+    body{
         display: none;
     }
-
-    #horarios-ocupados h2 {
-        font-size: 5vw;
-        text-align: center;
-    }
-
-    #lista-horarios {
-        font-size: 4vw;
-        padding-left: 5vw;
-    }
 }
+  
