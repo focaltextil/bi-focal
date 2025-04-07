@@ -113,7 +113,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 #horarios-ocupados {
-    min-height: 26vw;
+    min-height: 30vw;
     background-color: var(--cor-container);
     border-radius: 0.5vw;
     padding: 1vw;
