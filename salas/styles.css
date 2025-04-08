@@ -25,6 +25,8 @@ body {
     justify-content: center; 
     align-items: center; 
     background-color: var(--bg_cor);
+    padding-top: 3vw;
+    padding-bottom: 3vw;
 }
 
 h1 {
@@ -41,7 +43,7 @@ h1 {
     color: var(--cor_texto);
     padding: 2vw;
     width: 90vw;
-    min-height: 80vh;
+    min-height: 20vh;
     border-radius: 0.5vw;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
@@ -113,7 +115,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 #horarios-ocupados {
-    min-height: 30vw;
+    min-height: 22vw;
     background-color: var(--cor-container);
     border-radius: 0.5vw;
     padding: 1vw;
