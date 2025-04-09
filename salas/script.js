@@ -181,7 +181,7 @@ window.addEventListener('load', function () {
         tdNome.textContent = intervalo.nome;
 
         const tdProfissional = document.createElement('td');
-        tdProfissional.textContent = salaSelecionada;
+        tdProfissional.textContent = intervalo.titulo;
 
         const tdInicio = document.createElement('td');
         tdInicio.textContent = formatarHorario(intervalo.inicio);
