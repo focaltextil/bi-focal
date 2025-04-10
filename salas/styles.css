@@ -25,12 +25,11 @@ body {
     justify-content: center; 
     align-items: center; 
     background-color: var(--bg_cor);
-    padding-top: 3vw;
-    padding-bottom: 3vw;
 }
 
 h1 {
     color: var(--cor_texto);
+    margin-bottom: 0.5vw;
 }
 
 
@@ -42,8 +41,8 @@ h1 {
     background-color: var(--card_cor);
     color: var(--cor_texto);
     padding: 2vw;
-    width: 90vw;
-    min-height: 20vh;
+    width: 95vw;
+    height: 80vh;
     border-radius: 0.5vw;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
@@ -61,6 +60,12 @@ h1 {
     gap: 1vw;
 }
 
+.linha-container{
+    background-color: var(--cor-container);
+    margin-bottom: 1vw;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+}
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
@@ -74,16 +79,15 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border: none;
 }
 
-.sala, .data, .hora_inicio,.hora_fim{
-    background-color: var(--cor-container);
+.sala, .data, .titulo, .hora_inicio,.hora_fim{
+    background-color: var(--card_cor);
     display: flex;
     flex-direction: column;
     border-radius: 0.5vw;
     padding: 0.5vw 1vw;
 }
 
-.sala select, 
-.titulo {
+.sala select{
     background-color: var(--cor-container);
     color: var(--cor_texto);
     border: 1px solid #fff;
@@ -94,10 +98,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     min-width: 10vw;
 }
 
-.titulo{
-    border: none;
-    margin: 0;
-}
 
 .hora_inicio input, 
 .data input,
@@ -115,7 +115,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 #horarios-ocupados {
-    min-height: 22vw;
+    min-height: 17vw;
     background-color: var(--cor-container);
     border-radius: 0.5vw;
     padding: 1vw;
@@ -170,7 +170,6 @@ tbody tr:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1vw;
 }
 
 .caixa{
@@ -180,15 +179,17 @@ tbody tr:hover {
     gap: 5vw;
 }
 
-.header img{
-    width: 10vw;
+img{
+    width: 8vw;
+    margin-bottom: 0.5vw;
 }
 
 
 #btn_agendar {
     background-color: var(--cor-botao);
     padding: 0.5vw;
-    margin: 0.5vw;
+    margin: 1vw 0;
+    float: right;
     border-radius: 0.5vw;
     color: var(--cor_texto);
     cursor: pointer;

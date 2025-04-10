@@ -34,71 +34,69 @@
 
             </div>
 
-
-            <button type="submit" id="btn_agendar">Salvar</button>
-
         </div>
 
         <form id="form">
-        
-                <div class="linha-container">
 
-                    
+            <div class="linha-container">
 
-                    <div class="subcontainer">
 
-                        <div class="sala">
+                <button type="submit" id="btn_agendar">Salvar Reserva</button>
 
-                            <h4>Sala</h4>
+                <div class="subcontainer">
 
-                            <select id="sala">
+                    <div class="sala">
 
-                                <option value="Sala De Reunião">Sala De Reunião</option>
+                        <h4>Sala</h4>
 
-                                <option value="Sala De Treinamento">Sala De Treinamento</option>
+                        <select id="sala">
 
-                            </select>
-                        </div>
+                            <option value="Sala De Reunião">Sala De Reunião</option>
 
-                        <div class="titulo">
+                            <option value="Sala De Treinamento">Sala De Treinamento</option>
 
-                            <h4>Título</h4>
+                        </select>
+                    </div>
 
-                            <input type="text" id="titulo">
+                    <div class="titulo">
 
-                        </div>
+                        <h4>Título</h4>
 
-                        <div class="data">
+                        <input type="text" id="titulo">
 
-                            <h4>Data</h4>
+                    </div>
 
-                            <input type="date" id="data" required>
+                    <div class="data">
 
-                        </div>
+                        <h4>Data</h4>
 
-                        <div class="hora_inicio">
+                        <input type="date" id="data" required>
 
-                            <h4>Início</h4>
+                    </div>
 
-                            <input type="time" id="hora-inicio" step="600" min="07:00" max="17:00">
+                    <div class="hora_inicio">
 
-                        </div>
+                        <h4>Início</h4>
 
-                        <div class="hora_fim">
+                        <input type="time" id="hora-inicio" step="600" min="07:00" max="17:00">
 
-                            <h4>Término</h4>
+                    </div>
 
-                            <input type="time" id="hora-fim" step="600">
+                    <div class="hora_fim">
 
-                        </div>
+                        <h4>Término</h4>
+
+                        <input type="time" id="hora-fim" step="600">
 
                     </div>
 
                 </div>
-        
-            
+
+            </div>
+
+
         </form>
-        
+
 
         <div id="mensagem"></div>
 
@@ -108,18 +106,18 @@
 
             <table>
                 <thead>
-                  <tr>
-                    <th>Nome</th>
-                    <th>Titulo</th>
-                    <th>Início</th>
-                    <th>Término</th>
-                    <th>Ações</th>
-                  </tr>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Titulo</th>
+                        <th>Início</th>
+                        <th>Término</th>
+                        <th>Ações</th>
+                    </tr>
                 </thead>
                 <tbody id="lista-horarios">
-  
+
                 </tbody>
-              </table>
+            </table>
 
         </div>
 
