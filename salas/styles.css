@@ -173,14 +173,9 @@ tbody tr:hover {
 }
 
 
-#calendario{
-    width: 3vw;
-    margin-bottom: 0.5vw;
-    cursor: pointer;
-}
 
 
-#btn_agendar {
+#btn_agendar, #calendario {
     background-color: var(--cor-botao);
     padding: 0.5vw;
     margin: 1vw 0;
