@@ -21,13 +21,13 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1vw;
-    padding: 0;
+    padding: 1vw;
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
+    background-color: var(--cor-botao-hover);
+    border-radius: 0.5vw;
 }
-
-
 
 .fc {
     background-color: var(--card_cor);
@@ -48,17 +48,6 @@ body {
     color: var(--cor_texto);
 }
 
-/* Botões do topo */
-.fc-button {
-    background-color: var(--cor-botao);
-    color: white;
-    border-radius: 6px;
-    border: none;
-}
-
-.fc-button:hover {
-    background-color: var(--cor-botao-hover);
-}
 
 /* Hoje destacado */
 .fc-day-today {
@@ -68,15 +57,14 @@ body {
 /* Eventos */
 .fc-event {
     border: none;
-    font-size: 0.85rem;
+    font-size: 0.9vw;
     padding: 2px 6px;
     border-radius: 4px;
 }
 
-
-
 .fc-view-harness {
     min-height: 30vw !important;
+    background-color: var(--cor-botao);
 }
 
 #btn-voltar {
