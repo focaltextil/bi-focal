@@ -172,16 +172,11 @@ tbody tr:hover {
     align-items: center;
 }
 
-.caixa{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5vw;
-}
 
-img{
-    width: 8vw;
+#calendario{
+    width: 3vw;
     margin-bottom: 0.5vw;
+    cursor: pointer;
 }
 
 
