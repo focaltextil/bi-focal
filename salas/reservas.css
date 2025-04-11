@@ -29,16 +29,20 @@ body {
     border-radius: 0.5vw;
 }
 
+img{
+    margin-top: 1vw;
+}
+
 .fc {
     background-color: var(--card_cor);
-    color: var(--cor_texto);
+    color: var(--bg_cor);
     border-radius: 10px;
     padding: 1rem;
 }
 
 /* Estilo dos dias */
 .fc-daygrid-day {
-    background-color: var(--cor-container);
+    background-color: var(--cor_texto);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
