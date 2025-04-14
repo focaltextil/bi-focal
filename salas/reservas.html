@@ -28,15 +28,37 @@ document.addEventListener('DOMContentLoaded', async function () {
   const eventos = dados.map(item => {
     const data = item.data.split('T')[0];
 
+    // Define a cor baseado no título
+    const titulo = item.titulo.toLowerCase();
+    let corFundo = '#797979'; // padrão
+    if (titulo.includes('supere')) {
+      corFundo = '#12DEC6';
+    } else if (titulo.includes('fechamento rmcs')) {
+      corFundo = '#F7B400';
+    } else if (titulo.includes('comitê de sustentabilidade')) {
+      corFundo = '#00AF4D';
+    } else if (titulo.includes('semanal gerentes')) {
+      corFundo = '#AEAAAA';
+    } else if (titulo.includes('comitê 6s')) {
+      corFundo = '#9D6B99';
+    } else if (titulo.includes('auditoria (selo origem sustentável)')) {
+      corFundo = '#833C0C';
+    } else if (titulo.includes('feriado')) {
+      corFundo = '#9BC2E6';
+    } else if (titulo.includes('evento')) {
+      corFundo = '#9b59b6';
+    }
+
     return {
       title: `${item.titulo} - ${item.nome}`,
       start: `${data}T${item.hora_inicio}`,
       end: `${data}T${item.hora_fim}`,
       extendedProps: {
-        tituloOriginal: item.titulo.toLowerCase(),
+        tituloOriginal: titulo,
         sala: item.sala,
         id: item.id
-      }
+      },
+      color: corFundo // Passa a cor para o evento
     };
   });
 
@@ -55,6 +77,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         center: 'title',
         right: ''
       },
+      hiddenDays: [0, 6],
       events: eventos,
       eventClick: function (info) {
         alert(
@@ -64,44 +87,19 @@ document.addEventListener('DOMContentLoaded', async function () {
           `Fim: ${info.event.end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
         );
       },
-      dayCellDidMount: function (info) {
-        const dia = info.date.toISOString().split('T')[0];
-
-        const eventoDoDia = eventos.find(ev => ev.start.startsWith(dia));
-        if (eventoDoDia) {
-          const titulo = eventoDoDia.extendedProps.tituloOriginal;
-
-          let corFundo = '#797979'; // padrão
-          if (titulo.includes('supere')) {
-            corFundo = '#12DEC6';
-          }else if (titulo.includes('fechamento rmcs')) {
-            corFundo = '#F7B400';
-          } else if (titulo.includes('comitê de sustentabilidade')) {
-            corFundo = '#00AF4D';
-          } else if (titulo.includes('semanal gerentes')) {
-            corFundo = '#AEAAAA'; 
-          } else if (titulo.includes('comitê 6s')) {
-            corFundo = '#9D6B99';   
-          } else if (titulo.includes('auditoria (selo origem sustentável)')) {
-            corFundo = '#833C0C';
-          } else if (titulo.includes('feriado')) {
-            corFundo = '#9BC2E6';    
-          } else if (titulo.includes('evento')) {
-            corFundo = '#9b59b6';
-          }
-
-          // Aplica o fundo no quadradinho do dia
-          info.el.style.backgroundColor = corFundo;
-          info.el.style.color = 'white'; // texto branco
-          info.el.style.borderRadius = '6px';
+      eventDidMount: function (info) {
+ 
+        const dotEl = info.el.querySelector('.fc-event-dot');
+        if (dotEl) {
+          dotEl.style.backgroundColor = info.event.backgroundColor;
         }
-      }
+      },
+      dayCellDidMount: null
     });
 
     calendar.render();
   }
 });
-
 
 
   </script>

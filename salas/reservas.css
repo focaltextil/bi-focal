@@ -19,7 +19,7 @@ body {
 
 #ano-completo {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1vw;
     padding: 1vw;
     width: 100%;
@@ -52,23 +52,26 @@ img{
     color: var(--cor_texto);
 }
 
-
-/* Hoje destacado */
 .fc-day-today {
     background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
-/* Eventos */
+
 .fc-event {
     border: none;
     font-size: 0.9vw;
     padding: 2px 6px;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .fc-view-harness {
     min-height: 30vw !important;
     background-color: var(--cor-botao);
+}
+
+.fc-daygrid-event-dot{
+    border: 0.5vw solid;
 }
 
 #btn-voltar {
