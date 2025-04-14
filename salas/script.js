@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
 
         return horario.slice(0, 5);
     }
-    
+
     let user_name = atualizarUser();
 
     window.addEventListener("storage", function () {
@@ -99,20 +99,20 @@ window.addEventListener('load', function () {
                 horariosRestantes.push(fimFormatado);
             }
         });
-        
-    
+
+
         horariosRestantes.sort();
 
         horariosRestantes = horariosRestantes.filter(horario => {
 
-            return !horariosOcupadosSala.some(({ inicio, fim }) => 
+            return !horariosOcupadosSala.some(({ inicio, fim }) =>
 
                 (horario > formatarHorario(inicio) && horario < formatarHorario(fim))
 
             ) || horariosOcupadosSala.some(({ fim }) => horario === formatarHorario(fim));
 
         });
-        
+
 
         horariosRestantes.forEach(horario => {
 
@@ -134,7 +134,7 @@ window.addEventListener('load', function () {
 
         let horariosOcupadosSala = horariosOcupados[document.getElementById('sala').value]?.[document.getElementById('data').value] || [];
 
-        const horariosDisponiveis = gerarHorariosDisponiveis().filter(horario => 
+        const horariosDisponiveis = gerarHorariosDisponiveis().filter(horario =>
 
             horario > horaInicio || horariosOcupadosSala.some(({ fim }) => horario === fim)
         );
@@ -163,57 +163,57 @@ window.addEventListener('load', function () {
         const title = document.getElementById("agenda_title");
         const dataSelecionada = document.getElementById('data').value;
         const salaSelecionada = document.getElementById('sala').value;
-    
+
         const data = new Date(`${dataSelecionada}T00:00:00`);
         const dataFormatada = data.toLocaleDateString('pt-BR');
-    
+
         tabela.innerHTML = '';
         title.innerHTML = `${dataFormatada} - Sala ${salaSelecionada}`;
-    
+
         const reservas = horariosOcupados[salaSelecionada]?.[dataSelecionada] || [];
-    
+
         reservas
-    .sort((a, b) => a.inicio.localeCompare(b.inicio))
-    .forEach(intervalo => {
-        const tr = document.createElement('tr');
+            .sort((a, b) => a.inicio.localeCompare(b.inicio))
+            .forEach(intervalo => {
+                const tr = document.createElement('tr');
 
-        const tdNome = document.createElement('td');
-        tdNome.textContent = intervalo.nome;
+                const tdNome = document.createElement('td');
+                tdNome.textContent = intervalo.nome;
 
-        const tdProfissional = document.createElement('td');
-        tdProfissional.textContent = intervalo.titulo;
+                const tdProfissional = document.createElement('td');
+                tdProfissional.textContent = intervalo.titulo;
 
-        const tdInicio = document.createElement('td');
-        tdInicio.textContent = formatarHorario(intervalo.inicio);
+                const tdInicio = document.createElement('td');
+                tdInicio.textContent = formatarHorario(intervalo.inicio);
 
-        const tdFim = document.createElement('td');
-        tdFim.textContent = formatarHorario(intervalo.fim);
+                const tdFim = document.createElement('td');
+                tdFim.textContent = formatarHorario(intervalo.fim);
 
-        const tdAcoes = document.createElement('td');
-        tdAcoes.classList.add('col-acoes');
+                const tdAcoes = document.createElement('td');
+                tdAcoes.classList.add('col-acoes');
 
-        if (intervalo.nome === user_name) {
-            const btnExcluir = document.createElement('button');
-            btnExcluir.classList.add('btn-excluir');
-            btnExcluir.textContent = 'Cancelar';
-            btnExcluir.title = 'Excluir reserva';
-            btnExcluir.dataset.id = intervalo.id;
-            btnExcluir.style.cursor = 'pointer';
-            btnExcluir.addEventListener('click', excluirReserva);
-            tdAcoes.appendChild(btnExcluir);
-        }
+                if (intervalo.nome === user_name) {
+                    const btnExcluir = document.createElement('button');
+                    btnExcluir.classList.add('btn-excluir');
+                    btnExcluir.textContent = 'Cancelar';
+                    btnExcluir.title = 'Excluir reserva';
+                    btnExcluir.dataset.id = intervalo.id;
+                    btnExcluir.style.cursor = 'pointer';
+                    btnExcluir.addEventListener('click', excluirReserva);
+                    tdAcoes.appendChild(btnExcluir);
+                }
 
-        tr.appendChild(tdNome);
-        tr.appendChild(tdProfissional);
-        tr.appendChild(tdInicio);
-        tr.appendChild(tdFim);
-        tr.appendChild(tdAcoes);
+                tr.appendChild(tdNome);
+                tr.appendChild(tdProfissional);
+                tr.appendChild(tdInicio);
+                tr.appendChild(tdFim);
+                tr.appendChild(tdAcoes);
 
-        tabela.appendChild(tr);
-    });
+                tabela.appendChild(tr);
+            });
 
-}
-    
+    }
+
 
     async function excluirReserva(event) {
 
@@ -236,7 +236,7 @@ window.addEventListener('load', function () {
                 throw new Error(`Erro ${response.status}: ${response.statusText}`);
             }
 
-            spinner.style.display = "none"; 
+            spinner.style.display = "none";
 
             document.getElementById('data').dispatchEvent(new Event('change'));
 
@@ -251,32 +251,32 @@ window.addEventListener('load', function () {
 
     btn_agendar.addEventListener("click", async function (e) {
         e.preventDefault();
-    
+
         const spinner = document.getElementById('spinner');
         spinner.style.display = "flex";
-    
+
         const nome = user_name;
         const salaEscolhida = document.getElementById('sala').value;
         const titulo_reuniao = document.getElementById('titulo').value.trim();
         const dataEscolhida = document.getElementById('data').value;
         const horaInicio = document.getElementById('hora-inicio').value;
         const horaFim = document.getElementById('hora-fim').value;
-    
+
         if (!salaEscolhida || !dataEscolhida || !horaInicio || !horaFim || !titulo_reuniao) {
             alert("Por favor, preencha todos os campos.");
             spinner.style.display = "none";
             return;
         }
-    
+
         if (horaFim <= horaInicio) {
             alert("O horário de fim deve ser posterior ao horário de início.");
             spinner.style.display = "none";
             return;
         }
-    
+
         const reservasNaSala = horariosOcupados[salaEscolhida]?.[dataEscolhida] || [];
-    
-        if (reservasNaSala.some(intervalo => 
+
+        if (reservasNaSala.some(intervalo =>
             !(formatarHorario(intervalo.fim) <= horaInicio || formatarHorario(intervalo.inicio) >= horaFim) &&
             formatarHorario(intervalo.fim) !== horaInicio
         )) {
@@ -284,23 +284,23 @@ window.addEventListener('load', function () {
             spinner.style.display = "none";
             return;
         }
-    
-        const reserva = { 
-            nome, 
-            sala: salaEscolhida, 
-            data: dataEscolhida, 
-            hora_inicio: horaInicio, 
-            hora_fim: horaFim, 
-            titulo: titulo_reuniao 
+
+        const reserva = {
+            nome,
+            sala: salaEscolhida,
+            data: dataEscolhida,
+            hora_inicio: horaInicio,
+            hora_fim: horaFim,
+            titulo: titulo_reuniao
         };
-    
+
         try {
             const response = await fetch("https://api-tbpreco.onrender.com/reserva_input", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(reserva)
             });
-    
+
             if (response.ok) {
                 spinner.style.display = "none";
                 document.getElementById('data').dispatchEvent(new Event('change'));
@@ -313,7 +313,8 @@ window.addEventListener('load', function () {
             spinner.style.display = "none";
         }
     });
-    
+
+
 });
 
 window.addEventListener('DOMContentLoaded', () => {
