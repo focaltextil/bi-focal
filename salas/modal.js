@@ -144,6 +144,14 @@ window.addEventListener('load', function () {
 
     });
 
+    const btn_fechar_modal = document.getElementById('btn_fechar');
+    
+    btn_fechar_modal.addEventListener('click', function(){
+
+        document.getElementById('modal').style.display = 'none';
+
+    });
+
     btn_agendar.addEventListener("click", async function (e) {
         
         e.preventDefault();
