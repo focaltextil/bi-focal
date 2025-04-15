@@ -2,6 +2,7 @@ window.addEventListener('load', function () {
 
     carregarHorariosOcupados();
 
+
     const btn_agendar = document.getElementById("btn_agendar");
     let horariosOcupados = {};
 
@@ -225,6 +226,42 @@ window.addEventListener('load', function () {
             spinner.style.display = "none";
         }
     });
+
+    async function excluirReserva(event) {
+
+        const spinner = document.getElementById('spinner');
+
+        spinner.style.display = "flex";
+
+        try {
+            const idReserva = event.target.getAttribute('data-id');
+
+            const response = await fetch(`https://api-tbpreco.onrender.com/delete_agendamento/${idReserva}`, {
+
+                method: "DELETE",
+
+            });
+
+
+            if (!response.ok) {
+
+                throw new Error(`Erro ${response.status}: ${response.statusText}`);
+            }
+
+            spinner.style.display = "none";
+
+            document.getElementById('data').dispatchEvent(new Event('change'));
+
+
+        } catch (error) {
+
+            alert("Erro ao excluir reserva: " + error.message);
+
+            spinner.style.display = "none";
+        }
+    }
+
+
 
 });
 
