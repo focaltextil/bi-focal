@@ -26,18 +26,6 @@
 
   </div>
 
-  <div id="modal-evento" class="modal">
-    <div class="modal-content">
-      <span id="fechar-modal-evento" class="fechar">&times;</span>
-      <h2 id="modal-titulo"></h2>
-      <p><strong>Início:</strong> <span id="modal-inicio"></span></p>
-      <p><strong>Fim:</strong> <span id="modal-fim"></span></p>
-      <button id="btn-excluir-evento" data-id="">Excluir Reserva</button>
-    </div>
-  </div>
-  
-
-
   <div class="modal" id="modal">
 
     <form id="form">
@@ -254,15 +242,24 @@
             right: ''
           },
           hiddenDays: [0, 6],
+
           events: eventos,
+
           eventClick: function (info) {
+
             alert(
+
               `Título: ${info.event.title}\n` +
+
               `Sala: ${info.event.extendedProps.sala}\n` +
+
               `Início: ${info.event.start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}\n` +
+
               `Fim: ${info.event.end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
+
             );
           },
+
           eventDidMount: function (info) {
 
             const dotEl = info.el.querySelector('.fc-event-dot');
