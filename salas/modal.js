@@ -10,112 +10,76 @@ window.addEventListener('load', function () {
     }
 
     function formatarHorario(horario) {
-
         return horario.slice(0, 5);
     }
 
     let user_name = atualizarUser();
 
     window.addEventListener("storage", function () {
-
         user_name = atualizarUser();
     });
 
     document.getElementById('data').addEventListener('change', carregarHorariosOcupados);
 
-    document.getElementById('sala').addEventListener('change', () => {
-        atualizarHorarios();
-        atualizarListaOcupados();
-    });
-
+    document.getElementById('sala').addEventListener('change', atualizarHorarios);
 
     function carregarHorariosOcupados() {
-
         spinner.style.display = "flex";
 
         const dataFiltro = document.getElementById('data').value;
-
         if (!dataFiltro) return;
 
         fetch("https://api-tbpreco.onrender.com/horarios")
-
             .then(response => response.json())
-
             .then(data => {
-
                 spinner.style.display = "none";
-
                 horariosOcupados = {};
 
                 data.forEach(reserva => {
-
                     const { id, sala, data: dataReserva, hora_inicio, hora_fim, nome, titulo } = reserva;
-
                     const dataFormatada = new Date(dataReserva).toISOString().split('T')[0];
 
                     if (dataFormatada === dataFiltro) {
-
                         if (!horariosOcupados[sala]) horariosOcupados[sala] = {};
-
                         if (!horariosOcupados[sala][dataFiltro]) horariosOcupados[sala][dataFiltro] = [];
 
-                        horariosOcupados[sala][dataFiltro].push({ id, nome, inicio: hora_inicio, fim: hora_fim, titulo: titulo });
+                        horariosOcupados[sala][dataFiltro].push({ id, nome, inicio: hora_inicio, fim: hora_fim, titulo });
                     }
                 });
 
-                atualizarListaOcupados();
-
                 atualizarHorarios();
             })
-
             .catch(error => console.error("Erro ao buscar horários:", error));
     }
 
-
     function atualizarHorarios() {
-
         const dataEscolhida = document.getElementById('data').value;
-
         const salaEscolhida = document.getElementById('sala').value;
-
         const horaInicioSelect = document.getElementById('hora-inicio');
-
-        const horaFimSelect = document.getElementById('hora-fim');
 
         if (!dataEscolhida || !salaEscolhida) return;
 
+        horaInicioSelect.innerHTML = '';
 
         let horariosRestantes = [...gerarHorariosDisponiveis()];
-
         let horariosOcupadosSala = horariosOcupados[salaEscolhida]?.[dataEscolhida] || [];
 
-
         horariosOcupadosSala.forEach(({ fim }) => {
-
             const fimFormatado = formatarHorario(fim);
-
             if (!horariosRestantes.includes(fimFormatado)) {
-
                 horariosRestantes.push(fimFormatado);
             }
         });
 
-
         horariosRestantes.sort();
 
         horariosRestantes = horariosRestantes.filter(horario => {
-
             return !horariosOcupadosSala.some(({ inicio, fim }) =>
-
                 (horario > formatarHorario(inicio) && horario < formatarHorario(fim))
-
             ) || horariosOcupadosSala.some(({ fim }) => horario === formatarHorario(fim));
-
         });
 
-
         horariosRestantes.forEach(horario => {
-
             horaInicioSelect.innerHTML += `<option value="${horario}">${horario}</option>`;
         });
 
@@ -123,11 +87,8 @@ window.addEventListener('load', function () {
     }
 
     function atualizarHoraFim() {
-
         const horaInicio = document.getElementById('hora-inicio').value;
-
         const horaFimSelect = document.getElementById('hora-fim');
-
         horaFimSelect.innerHTML = '';
 
         if (!horaInicio) return;
@@ -135,119 +96,53 @@ window.addEventListener('load', function () {
         let horariosOcupadosSala = horariosOcupados[document.getElementById('sala').value]?.[document.getElementById('data').value] || [];
 
         const horariosDisponiveis = gerarHorariosDisponiveis().filter(horario =>
-
             horario > horaInicio || horariosOcupadosSala.some(({ fim }) => horario === fim)
         );
 
         horariosDisponiveis.forEach(horario => {
-
             horaFimSelect.innerHTML += `<option value="${horario}">${horario}</option>`;
         });
     }
 
     function gerarHorariosDisponiveis() {
-
         const horarios = [];
         for (let h = 7; h < 18; h++) {
-
             horarios.push(`${h.toString().padStart(2, '0')}:00`);
-
             horarios.push(`${h.toString().padStart(2, '0')}:30`);
         }
         return horarios;
     }
 
-
-    function atualizarListaOcupados() {
-        const tabela = document.getElementById('lista-horarios');
-        const title = document.getElementById("agenda_title");
-        const dataSelecionada = document.getElementById('data').value;
-        const salaSelecionada = document.getElementById('sala').value;
-
-        const data = new Date(`${dataSelecionada}T00:00:00`);
-        const dataFormatada = data.toLocaleDateString('pt-BR');
-
-        tabela.innerHTML = '';
-        title.innerHTML = `${dataFormatada} - Sala ${salaSelecionada}`;
-
-        const reservas = horariosOcupados[salaSelecionada]?.[dataSelecionada] || [];
-
-        reservas
-            .sort((a, b) => a.inicio.localeCompare(b.inicio))
-            .forEach(intervalo => {
-                const tr = document.createElement('tr');
-
-                const tdNome = document.createElement('td');
-                tdNome.textContent = intervalo.nome;
-
-                const tdProfissional = document.createElement('td');
-                tdProfissional.textContent = intervalo.titulo;
-
-                const tdInicio = document.createElement('td');
-                tdInicio.textContent = formatarHorario(intervalo.inicio);
-
-                const tdFim = document.createElement('td');
-                tdFim.textContent = formatarHorario(intervalo.fim);
-
-                const tdAcoes = document.createElement('td');
-                tdAcoes.classList.add('col-acoes');
-
-                if (intervalo.nome === user_name) {
-                    const btnExcluir = document.createElement('button');
-                    btnExcluir.classList.add('btn-excluir');
-                    btnExcluir.textContent = 'Cancelar';
-                    btnExcluir.title = 'Excluir reserva';
-                    btnExcluir.dataset.id = intervalo.id;
-                    btnExcluir.style.cursor = 'pointer';
-                    btnExcluir.addEventListener('click', excluirReserva);
-                    tdAcoes.appendChild(btnExcluir);
-                }
-
-                tr.appendChild(tdNome);
-                tr.appendChild(tdProfissional);
-                tr.appendChild(tdInicio);
-                tr.appendChild(tdFim);
-                tr.appendChild(tdAcoes);
-
-                tabela.appendChild(tr);
-            });
-
-    }
-
-
     async function excluirReserva(event) {
-
         const spinner = document.getElementById('spinner');
-
         spinner.style.display = "flex";
 
         try {
             const idReserva = event.target.getAttribute('data-id');
-
             const response = await fetch(`https://api-tbpreco.onrender.com/delete_agendamento/${idReserva}`, {
-
                 method: "DELETE",
-
             });
 
-
             if (!response.ok) {
-
                 throw new Error(`Erro ${response.status}: ${response.statusText}`);
             }
 
             spinner.style.display = "none";
-
             document.getElementById('data').dispatchEvent(new Event('change'));
 
-
         } catch (error) {
-
             alert("Erro ao excluir reserva: " + error.message);
-
             spinner.style.display = "none";
         }
     }
+
+    const btn_abrir_modal = document.getElementById('btn_abrir');
+    
+    btn_abrir_modal.addEventListener('click', function(){
+
+        document.getElementById('modal').style.display = 'flex';
+
+    });
 
     btn_agendar.addEventListener("click", async function (e) {
         e.preventDefault();
@@ -301,14 +196,22 @@ window.addEventListener('load', function () {
                 body: JSON.stringify(reserva)
             });
 
+            const respostaTexto = await response.text();
+            console.log("Resposta do servidor:", respostaTexto);
+
             if (response.ok) {
-                spinner.style.display = "none";
                 document.getElementById('data').dispatchEvent(new Event('change'));
-            } else {
-                alert("Erro ao fazer a reserva.");
-                spinner.style.display = "none";
+                document.getElementById('modal').style.display = 'none';
+                alert("Reserva incluída com sucesso!");
             }
+            else {
+                alert("Erro ao fazer a reserva.");
+            }
+
+            spinner.style.display = "none";
         } catch (error) {
+            console.error("Erro ao conectar com o servidor:", error);
+
             alert("Erro ao conectar com o servidor.");
             spinner.style.display = "none";
         }
@@ -322,5 +225,4 @@ window.addEventListener('DOMContentLoaded', () => {
     const mes = String(hoje.getMonth() + 1).padStart(2, '0');
     const dia = String(hoje.getDate()).padStart(2, '0');
     document.getElementById('data').value = `${ano}-${mes}-${dia}`;
-    inputData.value = hoje;
 });

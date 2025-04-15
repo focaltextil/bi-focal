@@ -12,9 +12,111 @@
 
 <body>
 
+  <div id="spinner" style="display: none;">
+
+    Carregando...
+
+  </div>
+
+  <div class="header">
+
+    <h1>Calendário 2025</h1>
+
+    <button id="btn_abrir">Incluir Evento</button>
+
+  </div>
+
+  
+
+
+  <div class="modal" id="modal">
+
+    <form id="form">
+
+      <div class="modal-titulo">
+
+        <h3>Agendar Evento Patético</h3>
+
+        <button id="btn_fechar">x</button>
+
+      </div>
+
+      <div class="data">
+
+        <h4>Data</h4>
+
+        <input type="date" id="data" required>
+
+      </div>
+
+      <div class="subcontainer1">
+
+
+
+        <div class="sala">
+
+          <h4>Sala</h4>
+
+          <select id="sala">
+
+            <option value="Sala De Reunião">Sala De Reunião</option>
+
+            <option value="Sala De Treinamento">Sala De Treinamento</option>
+
+          </select>
+
+        </div>
+
+        <div class="titulo">
+
+          <h4>Título</h4>
+
+          <input type="text" id="titulo">
+
+        </div>
+
+      </div>
+
+
+
+      <div class="subcontainer2">
+
+        <div class="hora_inicio">
+
+          <h4>Início</h4>
+
+          <input type="time" id="hora-inicio" step="600" min="07:00" max="17:00">
+
+        </div>
+
+        <div class="hora_fim">
+
+          <h4>Término</h4>
+
+          <input type="time" id="hora-fim" step="600">
+
+        </div>
+
+      </div>
+
+      <div class="btn">
+
+
+        <button type="submit" id="btn_agendar">Agendar</button>
+
+
+      </div>
+
+    </form>
+
+
+  </div>
+
+
+  </div>
+
   <div id="ano-completo"></div>
 
-  <img src="../img/legenda.png" alt="">
 
   <script>
 
@@ -30,7 +132,7 @@
 
 
         const titulo = item.titulo.toLowerCase();
-        let corFundo = '#046A96'; //COR PADRAO DOS EVENTOS
+        let corFundo = '#046A96'; //COR PADRAO DOS EVENTOS PATETICOS E RIDICULOS
         if (titulo.includes('supere')) {
           corFundo = '#12DEC6';
         } else if (titulo.includes('fechamento rmcs')) {
@@ -44,7 +146,7 @@
         } else if (titulo.includes('auditoria (selo origem sustentável)')) {
           corFundo = '#833C0C';
         } else if (titulo.includes('feriado')) {
-          corFundo = '#9BC2E6';
+          corFundo = '#00FF1E';
         } else if (titulo.includes('evento')) {
           corFundo = '#9b59b6';
         }
@@ -58,9 +160,74 @@
             sala: item.sala,
             id: item.id
           },
-          color: corFundo // Passa a cor para o evento
+          color: corFundo //AQUI EU FORCO A COR PARA A PATETICIDADE
         };
       });
+
+
+      const legendaContainer = document.createElement('div');
+      legendaContainer.id = 'legenda-eventos';
+      legendaContainer.style.display = 'flex';
+      legendaContainer.style.flexWrap = 'wrap';
+      legendaContainer.style.gap = '10px';
+      legendaContainer.style.margin = '20px 0';
+      legendaContainer.style.fontFamily = 'sans-serif';
+      legendaContainer.style.fontSize = '14px';
+      legendaContainer.style.flexDirection = 'column'; // Pra deixar o h2 acima das legendas
+
+      // Cria o título e adiciona à div
+      const tituloLegenda = document.createElement('h2');
+      tituloLegenda.textContent = 'Legenda de Eventos';
+      tituloLegenda.style.marginBottom = '10px';
+      tituloLegenda.style.fontSize = '18px';
+      tituloLegenda.style.fontWeight = 'bold';
+      tituloLegenda.style.fontFamily = 'sans-serif';
+
+      legendaContainer.appendChild(tituloLegenda);
+
+      const legendas = [
+        { cor: '#046A96', texto: 'Eventos Padrão' },
+        { cor: '#12DEC6', texto: 'Supere' },
+        { cor: '#F7B400', texto: 'Fechamento RMCS' },
+        { cor: '#00AF4D', texto: 'Comitê de Sustentabilidade' },
+        { cor: '#AEAAAA', texto: 'Semanal Gerentes' },
+        { cor: '#9D6B99', texto: 'Comitê 6S' },
+        { cor: '#833C0C', texto: 'Auditoria (Selo Origem Sustentável)' },
+        { cor: '#00FF1E', texto: 'Feriado' },
+      ];
+
+      const legendasWrapper = document.createElement('div');
+      legendasWrapper.style.display = 'flex';
+      legendasWrapper.style.flexWrap = 'wrap';
+      legendasWrapper.style.gap = '10px';
+
+      legendas.forEach(item => {
+        const legendaItem = document.createElement('div');
+        legendaItem.style.display = 'flex';
+        legendaItem.style.alignItems = 'center';
+        legendaItem.style.gap = '5px';
+
+        const corBox = document.createElement('span');
+        corBox.style.width = '16px';
+        corBox.style.height = '16px';
+        corBox.style.backgroundColor = item.cor;
+        corBox.style.display = 'inline-block';
+        corBox.style.borderRadius = '3px';
+
+        const texto = document.createElement('span');
+        texto.textContent = item.texto;
+
+        legendaItem.appendChild(corBox);
+        legendaItem.appendChild(texto);
+        legendasWrapper.appendChild(legendaItem);
+      });
+
+      legendaContainer.appendChild(legendasWrapper);
+
+
+      const containerPai = document.getElementById('ano-completo');
+      containerPai.parentNode.insertBefore(legendaContainer, containerPai.nextSibling);
+
 
       for (let i = 0; i < 12; i++) {
         const month = String(i + 1).padStart(2, '0');
@@ -96,11 +263,11 @@
           },
           dayCellDidMount: function (info) {
             const data = info.date.toISOString().split('T')[0];
-            const diasColorir = ["2025-01-01", "2025-03-04","2025-04-18","2025-04-21",
-            "2025-05-01","2025-06-19","2025-07-09","2025-11-28","2025-12-08","2025-12-25"];
+            const diasColorir = ["2025-01-01", "2025-03-04", "2025-04-18", "2025-04-21",
+              "2025-05-01", "2025-06-19", "2025-07-09", "2025-11-28", "2025-12-08", "2025-12-25"];
 
             if (diasColorir.includes(data)) {
-              info.el.style.backgroundColor = "#FFD700";
+              info.el.style.backgroundColor = "#00FF1E";
               info.el.style.borderRadius = "6px";
             }
           }
@@ -121,5 +288,7 @@
   </script>
 
 </body>
+
+<script src="./modal.js"></script>
 
 </html>

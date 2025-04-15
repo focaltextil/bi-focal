@@ -14,8 +14,139 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 2rem;
+    padding: 1vw 0 0 ;
 }
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 60vw;
+
+    & button{
+        background-color: var(--cor-botao);
+        color: var(--cor_texto);
+        height: 2.5vw;
+        border: none;
+        border-radius: 0.5vw;
+        padding: 0.4vw 1vw;
+        cursor: pointer;
+    }
+
+}
+
+.modal{
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    top: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+}
+
+.modal-titulo{
+    width: 40vw;
+    height: 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & button{
+        background-color: red;
+        font-size: 1vw;
+        border: none;
+        color: var(--cor_texto);
+        padding: 0.4vw 0.6vw;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+
+form{
+    background-color: var(--card_cor);
+    width: 40vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1vw;
+    align-items: center;
+    border-radius: 0.5vw;
+    color: var(--cor_texto);
+}
+
+#btn_agendar{
+    background-color: var(--cor-botao);
+    border: none;
+    font-size: 1.2vw;
+    padding: 0.3vw 3vw;
+    color: var(--cor_texto);
+    border-radius: 0.3vw;
+    cursor: pointer;
+}
+
+.subcontainer1, .subcontainer2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1vw;
+    background-color: var(--cor-botao-hover);
+    border-radius: 0.5vw;
+    text-align: center;
+    width: 90%;
+    padding: 0.5vw;
+    margin: 0;
+}
+
+.sala select{
+    background-color: var(--cor-container);
+    color: var(--cor_texto);
+    border: 1px solid #fff;
+    padding: 0.3vw;
+    border-radius: 0.3vw;
+    text-align: center;
+    min-width: 16vw;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-botao-hover);
+    border-radius: 0.5vw;
+    text-align: center;
+    width: 90%;
+    padding: 0.5vw;
+    margin: 0;
+}
+
+.hora_inicio input, 
+.data input,
+.titulo input,
+.hora_fim input {
+    background-color: var(--cor-container);
+    color: var(--cor_texto);
+    border: 1px solid #fff;
+    padding: 0.3vw;
+    border-radius: 0.3vw;
+    text-align: center;
+    min-width: 16vw;
+    outline: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+
 
 #ano-completo {
     display: grid;
@@ -29,9 +160,13 @@ body {
     border-radius: 0.5vw;
 }
 
-img{
-    margin-top: 1vw;
+h1{
+    color: var(--cor_texto);
 }
+
+/* img{
+    margin-top: 1vw;
+} */
 
 .fc {
     background-color: var(--card_cor);
@@ -40,13 +175,13 @@ img{
     padding: 1rem;
 }
 
-/* Estilo dos dias */
+
 .fc-daygrid-day {
     background-color: var(--cor_texto);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Título do mês e cabeçalhos */
+
 .fc-toolbar-title,
 .fc-col-header-cell-cushion {
     color: var(--cor_texto);
@@ -84,3 +219,20 @@ img{
     min-width: 10vw;
     transition: background 0.3s ease-in-out;
 }
+
+/* ------------------------------- */
+/* LEGENDA EVENTOS */
+
+#legenda-eventos{
+    /* position: fixed; */
+    z-index: 1000;
+    width: 95vw;
+    /* top: -2vw; */
+    border-radius: 0.5vw;
+    font-weight: bold;
+    padding: 1vw;
+    background-color: var(--cor_texto);
+    color: var(--cor-botao);
+
+}
+
