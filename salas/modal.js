@@ -145,6 +145,7 @@ window.addEventListener('load', function () {
     });
 
     btn_agendar.addEventListener("click", async function (e) {
+        
         e.preventDefault();
 
         const spinner = document.getElementById('spinner');
