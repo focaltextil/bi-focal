@@ -1,3 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --cor_texto: #ffffff;
     --bg_cor: #051e33;
@@ -14,14 +23,33 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 1vw 0 0 ;
+    margin-bottom: 5vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+#spinner{
+    display: flex;
+    background-color: var(--cor-container);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100000;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor_texto);
 }
 
 .header{
     display: flex;
+    position: fixed;
+    background-color: var(--bg_cor);
     align-items: center;
     justify-content: space-around;
     gap: 60vw;
+    padding: 1vw;
+    z-index: 100;
+    top: 0;
+    width: 100vw;
 
     & button{
         background-color: var(--cor-botao);
@@ -31,6 +59,16 @@ body {
         border-radius: 0.5vw;
         padding: 0.4vw 1vw;
         cursor: pointer;
+    }
+
+    & .btns_eventos{
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    #meus_eventos{
+        background-color: rgb(5, 166, 206);
     }
 
 }
@@ -48,7 +86,7 @@ body {
 }
 
 .modal-titulo{
-    width: 40vw;
+    width: 38vw;
     height: 3vw;
     display: flex;
     justify-content: space-between;
@@ -151,22 +189,20 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #ano-completo {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1vw;
+    gap: 2vw;
     padding: 1vw;
     width: 100%;
     max-width: 1600px;
-    margin: 0 auto;
+    margin-top: 5vw;
     background-color: var(--cor-botao-hover);
     border-radius: 0.5vw;
 }
+
 
 h1{
     color: var(--cor_texto);
 }
 
-/* img{
-    margin-top: 1vw;
-} */
 
 .fc {
     background-color: var(--card_cor);
@@ -207,6 +243,15 @@ h1{
 
 .fc-daygrid-event-dot{
     border: 0.5vw solid;
+}
+
+.fc-daygrid-day-frame{
+    height: 5vw;
+    overflow-y: scroll;
+}
+
+.fc-daygrid-day-frame::-webkit-scrollbar{
+    display: none;
 }
 
 #btn-voltar {

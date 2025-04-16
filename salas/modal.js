@@ -191,7 +191,8 @@ window.addEventListener('load', function () {
             if (response.ok) {
                 document.getElementById('data').dispatchEvent(new Event('change'));
                 document.getElementById('modal').style.display = 'none';
-                alert("Reserva incluída com sucesso!");
+                // alert("Reserva incluída com sucesso!");
+                window.location.href = 'index.html';
             }
             else {
                 alert("Erro ao fazer a reserva.");
@@ -205,30 +206,7 @@ window.addEventListener('load', function () {
             spinner.style.display = "none";
         }
     });
-
-    // async function excluirReserva(event) {
-    //     const spinner = document.getElementById('spinner');
-    //     spinner.style.display = "flex";
-    
-    //     try {
-    //         const idReserva = event.target.getAttribute('data-id');
-    //         const response = await fetch(`https://api-tbpreco.onrender.com/delete_agendamento/${idReserva}`, {
-    //             method: "DELETE",
-    //         });
-    
-    //         if (!response.ok) {
-    //             throw new Error(`Erro ${response.status}: ${response.statusText}`);
-    //         }
-    
-    //         spinner.style.display = "none";
-    //         document.getElementById('data').dispatchEvent(new Event('change'));
-    //     } catch (error) {
-    //         alert("Erro ao excluir reserva: " + error.message);
-    //         spinner.style.display = "none";
-    //     }
-    // };
-    
-    
+  
 
 });
 

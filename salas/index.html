@@ -6,13 +6,13 @@
   <title>Calendário de Treinamentos</title>
   <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
-  <link rel="stylesheet" href="reservas.css">
+  <link rel="stylesheet" href="index.css">
 
 </head>
 
 <body>
 
-  <div id="spinner" style="display: none;">
+  <div id="spinner">
 
     Carregando...
 
@@ -22,7 +22,13 @@
 
     <h1>Calendário 2025</h1>
 
-    <button id="btn_abrir">Incluir Evento</button>
+    <div class="btns_eventos">
+
+      <button id="btn_abrir">Incluir Evento</button>
+
+      <button id="meus_eventos" onclick="window.location.href='meus_eventos.html'">Meus Eventos</button>
+
+    </div>
 
   </div>
 
