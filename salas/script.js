@@ -25,7 +25,7 @@ window.addEventListener('load', function () {
     });
 
     function carregarHorariosOcupados() {
-        spinner.style.display = "flex";
+  
         const dataFiltro = document.getElementById('data').value;
         if (!dataFiltro) return;
 
