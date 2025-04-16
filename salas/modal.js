@@ -25,15 +25,21 @@ window.addEventListener('load', function () {
     document.getElementById('sala').addEventListener('change', atualizarHorarios);
 
     function carregarHorariosOcupados() {
-        spinner.style.display = "flex";
+
+        
 
         const dataFiltro = document.getElementById('data').value;
+
         if (!dataFiltro) return;
 
         fetch("https://api-tbpreco.onrender.com/horarios")
+
             .then(response => response.json())
+
             .then(data => {
+
                 spinner.style.display = "none";
+
                 horariosOcupados = {};
 
                 data.forEach(reserva => {
@@ -137,6 +143,7 @@ window.addEventListener('load', function () {
         e.preventDefault();
 
         const spinner = document.getElementById('spinner');
+
         spinner.style.display = "flex";
 
         const nome = user_name;
