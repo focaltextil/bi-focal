@@ -124,10 +124,18 @@
   <script>
 
     document.addEventListener('DOMContentLoaded', async function () {
+
+      const spinner = document.getElementById("spinner");
+
+      spinner.style.display = "flex";
+
       const container = document.getElementById('ano-completo');
       const ano = 2025;
 
       const response = await fetch('https://api-tbpreco.onrender.com/horarios');
+
+      
+
       const dados = await response.json();
 
       const eventos = dados.map(item => {

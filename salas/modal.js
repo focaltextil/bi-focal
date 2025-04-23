@@ -26,8 +26,6 @@ window.addEventListener('load', function () {
 
     function carregarHorariosOcupados() {
 
-        
-
         const dataFiltro = document.getElementById('data').value;
 
         if (!dataFiltro) return;
