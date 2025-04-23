@@ -108,8 +108,9 @@ window.addEventListener("load", function () {
                     toggleMenu();
                 };
 
+            
                 sidebar.appendChild(botao);
-
+                
                 if (!primeiroModuloLiberado) {
                     primeiroModuloLiberado = modulo;
                 }
@@ -123,7 +124,6 @@ window.addEventListener("load", function () {
         document.getElementById("container-login").classList.add("desapear");
         document.getElementById("logged-message").innerHTML = userData.nickname;
 
-        
     }
 });
 
