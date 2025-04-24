@@ -36,73 +36,7 @@ h1 {
     margin-bottom: 0.5vw;
 }
 
-.agendamento {
-    align-items: center;
-}
 
-.subcontainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 1vw;
-    gap: 1vw;
-}
-
-.linha-container{
-    background-color: var(--cor-container);
-    margin-bottom: 1vw;
-    padding: 0.5vw;
-    border-radius: 0.5vw;
-    color: var(--cor_texto);
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-}
-
-input[type="time"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-}
-
-.titulo{
-    border: none;
-}
-
-.sala, .data, .titulo, .hora_inicio,.hora_fim{
-    background-color: var(--card_cor);
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.5vw;
-    padding: 0.5vw 1vw;
-}
-
-.sala select{
-    background-color: var(--cor-container);
-    color: var(--cor_texto);
-    border: 1px solid #fff;
-    padding: 0.3vw;
-    border-radius: 0.3vw;
-    text-align: center;
-    margin-top: 0.5vw;
-    min-width: 10vw;
-}
-
-
-.hora_inicio input, 
-.data input,
-.titulo input,
-.hora_fim input {
-    background-color: var(--cor-container);
-    color: var(--cor_texto);
-    border: 1px solid #fff;
-    padding: 0.3vw;
-    border-radius: 0.3vw;
-    text-align: center;
-    margin-top: 0.5vw;
-    min-width: 15vw;
-    outline: none;
-}
 
 #horarios-ocupados {
     display: flex;
@@ -111,7 +45,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     min-height: 20vw;
     background-color: var(--cor-container);
     border-radius: 0.5vw;
-    /* width: 90%; */
+    width: 95%;
 }
 
 #horarios-ocupados h2 {
@@ -155,12 +89,6 @@ tbody tr:hover {
 }
 
 
-#form {
-    display: flex;
-    flex-direction: column;
-    margin: 1vw;
-}
-
 .header{
     display: flex;
     position: fixed;
@@ -187,9 +115,7 @@ tbody tr:hover {
     transition: background 0.3s ease-in-out;
 }
 
-#btn_agendar:hover {
-    background-color: var(--cor-botao-hover);
-}
+
 
 .btn-excluir {
     background-color: var(--cor-excluir);
