@@ -29,14 +29,13 @@ body {
     align-items: center; 
     background-color: var(--bg_cor);
     margin-bottom: 5vw;
+    overflow: hidden;
 }
 
 h1 {
     color: var(--cor_texto);
     margin-bottom: 0.5vw;
 }
-
-
 
 #horarios-ocupados {
     display: flex;
@@ -46,20 +45,25 @@ h1 {
     background-color: var(--cor-container);
     border-radius: 0.5vw;
     width: 95%;
+    max-height: 70vh;
+    overflow-y: scroll;
 }
 
-#horarios-ocupados h2 {
+h2 {
     margin-top: 1vw;
-    text-align: left;
     color: var(--cor_texto);
+    margin: 1vw;
+    display: none;
+
 }
 
 table {
     width: 95%;
     border-collapse: collapse;
-    margin: 1vw;
     color: var(--cor_texto);
     font-size: 1vw;
+    height: 60vh;
+    max-height: 60vh;
 }
 
 th, td {
@@ -69,8 +73,11 @@ th, td {
 }
 
 th {
-    background-color: var(--cor-container);
+    position: sticky;
+    top: -0.1vw;
+    background-color: rebeccapurple;
     color: var(--cor_texto);
+    z-index: 1;
 }
 
 .col-acoes button {

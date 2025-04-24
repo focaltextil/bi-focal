@@ -45,7 +45,15 @@ window.addEventListener('load', function () {
         title.innerHTML = `Todos os seus compromissos`;
 
         horariosOcupados
-            .sort((a, b) => new Date(a.data + 'T' + a.hora_inicio) - new Date(b.data + 'T' + b.hora_inicio))
+
+            .sort((a, b) => {
+                const aData = a.data.split('T')[0];
+                const bData = b.data.split('T')[0];
+                const aDateTime = new Date(`${aData}T${a.hora_inicio}`);
+                const bDateTime = new Date(`${bData}T${b.hora_inicio}`);
+                return aDateTime - bDateTime;
+            })
+        
             .forEach(reserva => {
                 const tr = document.createElement('tr');
 
