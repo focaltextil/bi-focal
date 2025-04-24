@@ -46,6 +46,7 @@ h1 {
     border-radius: 0.5vw;
     width: 95%;
     max-height: 70vh;
+    height: 70vh;
     overflow-y: scroll;
 }
 
@@ -62,7 +63,6 @@ table {
     border-collapse: collapse;
     color: var(--cor_texto);
     font-size: 1vw;
-    height: 60vh;
     max-height: 60vh;
 }
 
