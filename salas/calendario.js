@@ -100,14 +100,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     initialView: 'dayGridMonth',
     locale: 'pt-br',
     headerToolbar: {
-      left: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth',
+      left: 'prev,next',
       center: 'title',
-      right: 'prev,next today'
+      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
+
     hiddenDays: [0, 6],
     events: eventos,
 
-    // Limita horário exibido entre 07:00 e 17:00
+
     slotMinTime: '07:00:00',
     slotMaxTime: '17:00:00',
 
