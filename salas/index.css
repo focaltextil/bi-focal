@@ -51,6 +51,8 @@ body {
     top: 0;
     width: 100vw;
 
+
+
     & button{
         background-color: var(--cor-botao);
         color: var(--cor_texto);
@@ -199,7 +201,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 
-h1{
+h2{
     color: var(--cor_texto);
 }
 
