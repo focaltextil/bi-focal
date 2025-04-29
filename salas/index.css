@@ -186,15 +186,18 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
 
-
+.fc-scrollgrid-sync-inner{
+    color: var(--cor_texto);
+    background-color: var(--bg_cor);
+}
 
 #ano-completo {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: 2vw;
     padding: 1vw;
-    width: 100%;
-    max-width: 1600px;
+    width: 95vw;
+    max-width: 90vw;
+    height: 90vh;
     margin-top: 5vw;
     background-color: var(--cor-botao-hover);
     border-radius: 0.5vw;
@@ -205,68 +208,134 @@ h2{
     color: var(--cor_texto);
 }
 
-
-.fc {
+table {
+    padding: 1vw;
     background-color: var(--card_cor);
-    color: var(--bg_cor);
-    border-radius: 10px;
-    padding: 1rem;
+    border-radius: 0.5vw;
 }
 
+thead {
+    font-size: 1.5vw;
+    background-color: var(--cor-botao);
+}
 
-.fc-daygrid-day {
+.fc-toolbar.fc-header-toolbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fc-toolbar-chunk {
+    flex: 1;
+}
+
+.fc-toolbar-title {
+    text-align: center;
+}
+
+.fc-button-group {
+    justify-content: flex-end;
+}
+
+.fc-timegrid-axis{
+    background-color: var(--bg_cor);
+}
+
+.fc .fc-daygrid-day-frame {
+    height: 4vw;
+    overflow-y: scroll;
+    padding-bottom: 0.2vw;
     background-color: var(--cor_texto);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-
-.fc-toolbar-title,
-.fc-col-header-cell-cushion {
-    color: var(--cor_texto);
+    color: var(--cor-botao);
+    font-size: 1vw;
 }
 
 .fc-day-today {
-    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 2px solid var(--cor-botao) !important;
 }
 
 
-.fc-event {
-    border: none;
-    font-size: 0.9vw;
-    padding: 2px 6px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.fc-view-harness {
-    min-height: 30vw !important;
-    background-color: var(--cor-botao);
-}
-
-.fc-daygrid-event-dot{
+.fc-daygrid-event-dot {
     border: 0.5vw solid;
 }
 
-.fc-daygrid-day-frame{
-    height: 5vw;
-    overflow-y: scroll;
+
+.fc .fc-button {
+    background-color: var(--cor-botao);
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    margin: 0 2px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
 }
 
-.fc-daygrid-day-frame::-webkit-scrollbar{
+.fc .fc-button:hover {
+    background-color: var(--cor-container);
+}
+
+.fc .fc-button:disabled {
+    background-color: var(--card_cor);
+    cursor: not-allowed;
+}
+
+.fc-toolbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.fc-scroller::-webkit-scrollbar {
     display: none;
 }
 
-#btn-voltar {
-    background-color: var(--cor-botao);
-    padding: 0.5vw;
-    margin: 1vw 0;
-    border-radius: 0.5vw;
-    color: var(--cor_texto);
-    cursor: pointer;
-    min-width: 10vw;
-    transition: background 0.3s ease-in-out;
+.fc-daygrid-event {
+    font-size: 0.85rem;
+    padding: 2px 4px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--cor-botao-hover);
 }
 
+.fc-daygrid-event:hover {
+    background-color: var(--cor-botao);
+    color: var(--cor_texto);
+}
+
+.fc-event {
+    cursor: pointer;
+}
+
+
+.fc-timegrid-slot-lane {
+    background-color: var(--cor_texto);
+}
+
+tbody tr {
+    line-height: 2vw;
+}
+
+.fc-list-table {
+    background-color: var(--bg_cor);
+    color: var(--cor-botao);
+}
+
+.fc-list-event-dot {
+    width: 0.5vw !important;
+}
+
+.fc-theme-standard .fc-list-day-cushion {
+    background-color: var(--card_cor);
+}
+
+.fc-daygrid-day-frame::-webkit-scrollbar {
+    display: none;
+}
+
+/* .fc-scrollgrid-sync-table{
+    display: none;
+} */
 /* ------------------------------- */
 /* LEGENDA EVENTOS */
 
