@@ -22,6 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin-bottom: 4vw;
 }
 
 
@@ -40,7 +41,7 @@ body {
     }
 
     & button{
-        background-color: var(--cor-botao);
+        background-color: rgb(5, 166, 206);
         padding: 0.5vw;
         margin: 0.5vw;
         float: right;

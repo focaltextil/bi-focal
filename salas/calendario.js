@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', async function () {
   legendaContainer.appendChild(legendasWrapper);
   container.parentNode.insertBefore(legendaContainer, container.nextSibling);
 
-  // CALENDÁRIO ÚNICO
   const calendar = new FullCalendar.Calendar(container, {
     initialView: 'dayGridMonth',
     locale: 'pt-br',

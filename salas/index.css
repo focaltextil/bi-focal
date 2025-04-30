@@ -23,7 +23,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 1vw;
+    margin-bottom: 4vw;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -192,14 +192,17 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 #ano-completo {
+    margin-top: 7vw;
     display: flex;
+    max-width: 98vw;
+    max-height: 90vh;
+    width: 98vw;
+    height: 95vh;
+    background-color: var(--cor-container);
     padding: 1vw;
-    width: 95vw;
-    max-width: 90vw;
-    height: 90vh;
-    margin-top: 5vw;
-    background-color: var(--cor-botao-hover);
-    border-radius: 0.5vw;
+    color: var(--cor_texto);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -286,8 +289,16 @@ thead {
     margin-bottom: 1rem;
 }
 
+.fc-scroller{
+    background-color: var(--bg_cor);
+}
+
 .fc-scroller::-webkit-scrollbar {
     display: none;
+}
+
+.fc-timegrid-slot{
+    color: var(--cor_texto);
 }
 
 .fc-daygrid-event {
@@ -334,13 +345,14 @@ tbody tr {
 }
 
 
-/* .fc-scrollgrid-sync-table{
+.fc-daygrid-body-natural{
     display: none;
-} */
+}
 /* ------------------------------- */
 /* LEGENDA EVENTOS */
 
 #legenda-eventos{
+    display: none !important;
     /* position: fixed; */
     z-index: 1000;
     width: 95vw;

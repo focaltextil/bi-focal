@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   calendar.render();
 
- 
+
 
   // Enviar novo agendamento
   document.getElementById("btn_agendar").addEventListener("click", async function (e) {
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
 
         document.getElementById("form").reset();
-        document.getElementById("modal_agendamento").classList.add("hidden");
+        document.getElementById("modal").classList.add("hidden");
       } else {
         alert(result.error || "Erro ao inserir compromisso.");
       }
@@ -133,8 +133,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
   });
 
-
-    document.getElementById("fechar_modal").addEventListener("click", () => {
-    document.getElementById("modal_agendamento").classList.add("hidden");
+  document.getElementById("fechar_modal").addEventListener("click", () => {
+    document.getElementById("modal").style.display = 'none';
   });
+
+  document.getElementById('btn_abrir').addEventListener('click', ()=>{
+    document.getElementById('modal').style.display = 'flex';
+
+  })
 });
