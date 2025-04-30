@@ -23,7 +23,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 4vw;
+    margin-bottom: 5vw;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -50,8 +50,6 @@ body {
     z-index: 100;
     top: 0;
     width: 100vw;
-
-
 
     & button{
         background-color: var(--cor-botao);
@@ -186,173 +184,91 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
 
-.fc-scrollgrid-sync-inner{
-    color: var(--cor_texto);
-    background-color: var(--bg_cor);
-}
+
 
 #ano-completo {
-    margin-top: 7vw;
-    display: flex;
-    max-width: 98vw;
-    max-height: 90vh;
-    width: 98vw;
-    height: 95vh;
-    background-color: var(--cor-container);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vw;
     padding: 1vw;
-    color: var(--cor_texto);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-
-h2{
-    color: var(--cor_texto);
-}
-
-table {
-    padding: 1vw;
-    height: 100%;
-    background-color: var(--card_cor);
+    width: 100%;
+    max-width: 1600px;
+    margin-top: 5vw;
+    background-color: var(--cor-botao-hover);
     border-radius: 0.5vw;
 }
 
-thead {
-    font-size: 1.5vw;
-    background-color: var(--cor-botao);
+
+h1{
+    color: var(--cor_texto);
 }
 
-.fc-toolbar.fc-header-toolbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+
+.fc {
+    background-color: var(--card_cor);
+    color: var(--bg_cor);
+    border-radius: 10px;
+    padding: 1rem;
 }
 
-.fc-toolbar-chunk {
-    flex: 1;
-}
 
-.fc-toolbar-title {
-    text-align: center;
-}
-
-.fc-button-group {
-    justify-content: flex-end;
-}
-
-.fc-timegrid-axis{
-    background-color: var(--bg_cor);
-}
-
-.fc .fc-daygrid-day-frame {
-    height: 7vw;
-    overflow-y: scroll;
-    padding-bottom: 0.2vw;
+.fc-daygrid-day {
     background-color: var(--cor_texto);
-    color: var(--cor-botao);
-    font-size: 1vw;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.fc-toolbar-title,
+.fc-col-header-cell-cushion {
+    color: var(--cor_texto);
 }
 
 .fc-day-today {
-    border: 2px solid var(--cor-botao) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
-
-.fc-daygrid-event-dot {
-    border: 0.5vw solid;
-}
-
-
-.fc .fc-button {
-    background-color: var(--cor-botao);
-    border: none;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    margin: 0 2px;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.fc .fc-button:hover {
-    background-color: var(--cor-container);
-}
-
-.fc .fc-button:disabled {
-    background-color: var(--card_cor);
-    cursor: not-allowed;
-}
-
-.fc-toolbar-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.fc-scroller{
-    background-color: var(--bg_cor);
-}
-
-.fc-scroller::-webkit-scrollbar {
-    display: none;
-}
-
-.fc-timegrid-slot{
-    color: var(--cor_texto);
-}
-
-.fc-daygrid-event {
-    font-size: 0.85rem;
-    padding: 2px 4px;
-    border-radius: 4px;
-    background-color: transparent;
-    color: var(--cor-botao-hover);
-}
-
-.fc-daygrid-event:hover {
-    background-color: var(--cor-botao);
-    color: var(--cor_texto);
-}
 
 .fc-event {
+    border: none;
+    font-size: 0.9vw;
+    padding: 2px 6px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-
-.fc-timegrid-slot-lane {
-    background-color: var(--cor_texto);
+.fc-view-harness {
+    min-height: 30vw !important;
+    background-color: var(--cor-botao);
 }
 
-tbody tr {
-    line-height: 2vw;
+.fc-daygrid-event-dot{
+    border: 0.5vw solid;
 }
 
-.fc-list-table {
-    background-color: var(--cor_texto);
-    color: var(--cor-botao);
+.fc-daygrid-day-frame{
+    height: 5vw;
+    overflow-y: scroll;
 }
 
-.fc-list-event-dot {
-    width: 0.5vw !important;
-}
-
-.fc-theme-standard .fc-list-day-cushion {
-    background-color: var(--cor_texto);
-}
-
-.fc-daygrid-day-frame::-webkit-scrollbar {
+.fc-daygrid-day-frame::-webkit-scrollbar{
     display: none;
 }
 
-
-.fc-daygrid-body-natural{
-    display: none;
+#btn-voltar {
+    background-color: var(--cor-botao);
+    padding: 0.5vw;
+    margin: 1vw 0;
+    border-radius: 0.5vw;
+    color: var(--cor_texto);
+    cursor: pointer;
+    min-width: 10vw;
+    transition: background 0.3s ease-in-out;
 }
+
 /* ------------------------------- */
 /* LEGENDA EVENTOS */
 
 #legenda-eventos{
-    display: none !important;
     /* position: fixed; */
     z-index: 1000;
     width: 95vw;
