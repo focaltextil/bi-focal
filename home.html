@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <title>Consulta de Estoque</title>
+</head>
+
+
+<body>
+    <section>
+        <div class="aniversarios">
+            <h3>Aniversariantes do Mês</h3>
+            <img src="./assets/Imagem.jpg" alt="Aniversariantes" />
+        </div>
+
+        <div class="cardapio">
+            <h3>Cardápio da Semana</h3>
+            <img src="./assets/cardapio.jpg"/>
+        </div>
+    </section>
+</body>
+
+
+<script>
+    if (sessionStorage.getItem("logon") !== "1") {
+        alert("Acesso não autorizado! Você será redirecionado para a tela de login.");
+        window.location.href = "index.html";
+    }
+</script>
+
+</html>
