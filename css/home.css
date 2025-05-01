@@ -30,7 +30,8 @@ section {
 }
 
 .aniversarios, .cardapio {
-    width: 80vw;
+    width: 55vw;
+    max-width: 55vw;
     background-color: var(--card_cor);
     padding: 20px;
     border-radius: 10px;
@@ -41,7 +42,14 @@ section {
 }
 
 .aniversarios img {
-    width: 75vw ;
+    width: 50vw ;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.cardapio img {
+    width: 50vw ;
     object-fit: contain;
     border-radius: 8px;
     margin-top: 10px;
