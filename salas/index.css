@@ -13,7 +13,7 @@
     --card_cor: #082946;
     --cor-container: #0d3b66;
     --cor-botao: #2684d1;
-    --cor-botao-hover: #1a5d9a;
+    --cor-botao-hover: #0d3b66;
     --cor-excluir: #e0a80b;
     --cor-excluir-hover: #eb0b03;
 }
@@ -61,14 +61,28 @@ body {
         cursor: pointer;
     }
 
-    & .btns_eventos{
+    & .btns_eventos, .calender_title {
         display: flex;
         justify-content: space-between;
         gap: 10px;
     }
 
     #meus_eventos{
-        background-color: rgb(5, 166, 206);
+        background-color: var(--cor-botao);
+    }
+
+    & select{
+        background-color: transparent;
+        color: var(--cor_texto);
+        text-align: center;
+        width: 7vw;
+        font-size: 1.8vw;
+        font-weight: bold;
+        border: none;
+
+        & option{
+            background-color: var(--bg_cor);
+        }
     }
 
 }
@@ -272,7 +286,7 @@ h1{
     /* position: fixed; */
     z-index: 1000;
     width: 95vw;
-    /* top: -2vw; */
+    bottom: -2vw;
     border-radius: 0.5vw;
     font-weight: bold;
     padding: 1vw;
