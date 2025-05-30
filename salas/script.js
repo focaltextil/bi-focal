@@ -23,7 +23,7 @@ window.addEventListener('load', function () {
         const spinner = document.getElementById('spinner');
         spinner.style.display = "flex";
 
-        fetch("https://api-tbpreco.onrender.com/horarios")
+        fetch("http://192.168.1.229:8001/salas/horarios")
             .then(response => response.json())
             .then(data => {
                 spinner.style.display = "none";
@@ -112,7 +112,7 @@ window.addEventListener('load', function () {
 
         try {
             const idReserva = event.target.getAttribute('data-id');
-            const response = await fetch(`https://api-tbpreco.onrender.com/delete_agendamento/${idReserva}`, {
+            const response = await fetch(`http://192.168.1.229:8001/salas/delete_agendamento/${idReserva}`, {
                 method: "DELETE",
             });
 

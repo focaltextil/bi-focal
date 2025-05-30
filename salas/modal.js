@@ -30,7 +30,7 @@ window.addEventListener('load', function () {
 
         if (!dataFiltro) return;
 
-        fetch("https://api-tbpreco.onrender.com/horarios")
+        fetch("http://192.168.1.229:8001/salas/horarios")
 
             .then(response => response.json())
 
@@ -184,7 +184,7 @@ window.addEventListener('load', function () {
         };
 
         try {
-            const response = await fetch("https://api-tbpreco.onrender.com/reserva_input", {
+            const response = await fetch("http://192.168.1.229:8001/salas/reserva_input", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(reserva)
