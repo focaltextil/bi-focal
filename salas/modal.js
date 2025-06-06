@@ -25,33 +25,36 @@ window.addEventListener('load', function () {
     document.getElementById('sala').addEventListener('change', atualizarHorarios);
 
     function carregarHorariosOcupados() {
-
         const dataFiltro = document.getElementById('data').value;
-
         if (!dataFiltro) return;
-
-        fetch("https://192.168.1.229:8001/salas/horarios")
-
-            .then(response => response.json())
-
+    
+        // Mostrar o spinner se estiver usando
+        spinner.style.display = "flex";
+    
+        // 🔁 Simulação: dados de reserva fake
+        const dadosSimulados = [
+            {"sala":"Sala De Treinamento","nome":"Vitória Sasaki","data":"2025-04-08T03:00:00.000Z","hora_inicio":"13:30:00","hora_fim":"15:00:00","id":133,"titulo":"Supere"},
+            {"sala":"Sala De Treinamento","nome":"Vitória Sasaki","data":"2025-04-15T03:00:00.000Z","hora_inicio":"13:30:00","hora_fim":"15:00:00","id":134,"titulo":"Supere"}
+          ];
+    
+        // 🔄 Simula o fetch usando uma Promise
+        Promise.resolve(dadosSimulados)
             .then(data => {
-
                 spinner.style.display = "none";
-
                 horariosOcupados = {};
-
+    
                 data.forEach(reserva => {
                     const { id, sala, data: dataReserva, hora_inicio, hora_fim, nome, titulo } = reserva;
                     const dataFormatada = new Date(dataReserva).toISOString().split('T')[0];
-
+    
                     if (dataFormatada === dataFiltro) {
                         if (!horariosOcupados[sala]) horariosOcupados[sala] = {};
                         if (!horariosOcupados[sala][dataFiltro]) horariosOcupados[sala][dataFiltro] = [];
-
+    
                         horariosOcupados[sala][dataFiltro].push({ id, nome, inicio: hora_inicio, fim: hora_fim, titulo });
                     }
                 });
-
+    
                 atualizarHorarios();
             })
             .catch(error => console.error("Erro ao buscar horários:", error));

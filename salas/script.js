@@ -22,12 +22,20 @@ window.addEventListener('load', function () {
     function carregarHorariosOcupados() {
         const spinner = document.getElementById('spinner');
         spinner.style.display = "flex";
-
-        fetch("https://192.168.1.229:8001/salas/horarios")
+    
+        // Simula o fetch
+        const mockResponse = {
+            json: () => Promise.resolve([
+                {"sala":"Sala De Treinamento","nome":"Vitória Sasaki","data":"2025-04-08T03:00:00.000Z","hora_inicio":"13:30:00","hora_fim":"15:00:00","id":133,"titulo":"Supere"},
+                {"sala":"Sala De Treinamento","nome":"Vitória Sasaki","data":"2025-04-15T03:00:00.000Z","hora_inicio":"13:30:00","hora_fim":"15:00:00","id":134,"titulo":"Supere"}
+              ])
+        };
+    
+        Promise.resolve(mockResponse)
             .then(response => response.json())
             .then(data => {
                 spinner.style.display = "none";
-
+    
                 horariosOcupados = data.filter(reserva => reserva.nome === user_name);
                 atualizarListaOcupados();
             })
