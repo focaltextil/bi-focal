@@ -153,7 +153,13 @@
 
         container.innerHTML = ""; // Limpa os calendários anteriores
 
-        const response = [];
+        const response = {
+          json: async () => [
+            {"sala":"Sala De Treinamento","nome":"Vitória Sasaki","data":"2025-04-08T03:00:00.000Z","hora_inicio":"13:30:00","hora_fim":"15:00:00","id":133,"titulo":"Supere"},
+            {"sala":"Sala De Treinamento","nome":"Vitória Sasaki","data":"2025-04-15T03:00:00.000Z","hora_inicio":"13:30:00","hora_fim":"15:00:00","id":134,"titulo":"Supere"}
+          ]
+        };
+
         const dados = await response.json();
 
         const eventos = dados
