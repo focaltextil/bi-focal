@@ -4,72 +4,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/index.css">
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <title>Focal Gestão</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #1f2937; /* text-gray-800 */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column-reverse;
+            gap: 16px;
+            padding: 24px 16px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                gap: 28px;
+                padding: 80px 44px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                flex-direction: row;
+                gap: 16px;
+                padding: 96px 96px;
+            }
+        }
+
+        .left {
+            width: 100%;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        @media (min-width: 1280px) {
+            .left {
+                width: 50%;
+                padding-top: 96px;
+                padding-bottom: 0;
+            }
+        }
+
+        .content {
+            position: absolute;
+        }
+
+        h1 {
+            margin: 8px 0;
+            font-weight: bold;
+            font-size: 1.5rem; /* 2xl */
+        }
+
+        p {
+            margin: 8px 0;
+        }
+
+        button {
+            display: flex;
+            margin: 8px 0;
+            padding: 10px 20px;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            background-color: #4f46e5; /* indigo-600 */
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            gap: 10px;
+        }
+
+        button:hover {
+            background-color: #4338ca; /* indigo-700 */
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.5);
+        }
+
+        .logo {
+            max-width: 20%;
+            height: auto;
+        }
+
+        .fundo-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    </style>
 </head>
 
 <body>
-
-    <div id="container-login" class="container">
-
-
-        <form id="loginForm" class="form">
-
-            <img class="logo" src="./img/logotipotipografico.png" alt="">
-
-            <div class="campos">
-
-                <label for="username">Usuário</label>
-
-                <input id="input-user" type="text">
-
-                <label for="password">Senha</label>
-
-                <input id="password" type="password">
-
+    <div class="container">
+        <div class="left">
+            <div class="relative">
+                <div class="content">                    
+                    <h1>Sistema descontinuado</h1>
+                    <p>
+                        Você tentou acessar uma versão antiga do <strong>Focal Gestão</strong>, que não está mais em operação.
+                        Para continuar utilizando nossos serviços, acesse a nova plataforma no link abaixo.
+                    </p>
+                    <button id="redirectBtn">
+                        <img src="./img/favicon.png" alt="Logo Focal Gestão" class="logo">
+                        Acessar Novo Sistema
+                    </button>
+                </div>
+                <div>
+                    <img src="https://i.ibb.co/G9DC8S0/404-2.png" alt="Erro 404" class="fundo-img" />
+                </div>
             </div>
-            <button type="submit">Entrar</button>
-
-            <p id="alert" class="message"></p>
-
-        </form>
-
-    </div>
-
-    <div class="screen-logged">
-
-        <div>
-
-            <div class="sidebar" id="sidebar">
-
-                <img src="./img/favicon2.png" alt="">
-
-                <span class="close-btn" onclick="toggleMenu()">&times;</span>
-
-
-            </div>
-
-            <div class="msg">
-
-                <img src="./img/menuicon.png" id="menu-icon">
-
-
-                <h2 id="logged-message"></h2>
-
-                <button class="exit-btn" onclick="Exit()">Sair</button>
-
-
-            </div>
-
-            <iframe id="iframe" src=""></iframe>
-
         </div>
-
+        <div class="right">
+            <img src="https://i.ibb.co/ck1SGFJ/Group.png" alt="Decoração" class="fundo-img" />
+        </div>
     </div>
 
-    <script src="./js/script.js"></script>
-
+    <script>
+        document.getElementById("redirectBtn").addEventListener("click", function () {
+            const primaryURL = "http://gestao.focaltextil.com.br:8008/";
+            const fallbackURL = "http://gestao.focaltextil.com.br/"; // coloque a página alternativa aqui
+    
+            // tenta acessar a página (HEAD é mais leve que GET)
+            fetch(primaryURL, { method: "HEAD", mode: "no-cors" })
+                .then(() => {
+                    // mesmo com no-cors, se não der erro, redireciona
+                    window.location.href = primaryURL;
+                })
+                .catch(() => {
+                    // se não conseguiu, vai para o fallback
+                    window.location.href = fallbackURL;
+                });
+        });
+    </script>
 </body>
 
 </html>
