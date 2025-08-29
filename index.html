@@ -134,18 +134,25 @@
     <script>
         document.getElementById("redirectBtn").addEventListener("click", function () {
             const primaryURL = "http://gestao.focaltextil.com.br:8008/";
-            const fallbackURL = "http://gestao.focaltextil.com.br/"; // coloque a página alternativa aqui
+            const fallbackURL = "https://www.focaltextil.com.br/"; // página alternativa
+            const timeout = 4000; // 4 segundos
     
-            // tenta acessar a página (HEAD é mais leve que GET)
-            fetch(primaryURL, { method: "HEAD", mode: "no-cors" })
-                .then(() => {
-                    // mesmo com no-cors, se não der erro, redireciona
-                    window.location.href = primaryURL;
-                })
-                .catch(() => {
-                    // se não conseguiu, vai para o fallback
-                    window.location.href = fallbackURL;
-                });
+            // cria um iframe invisível para tentar carregar a página
+            const iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = primaryURL;
+            document.body.appendChild(iframe);
+    
+            // se em X segundos não carregar, manda pro fallback
+            const timer = setTimeout(() => {
+                window.location.href = fallbackURL;
+            }, timeout);
+    
+            // se o iframe carregar, redireciona pro sistema principal
+            iframe.onload = function () {
+                clearTimeout(timer);
+                window.location.href = primaryURL;
+            };
         });
     </script>
 </body>
